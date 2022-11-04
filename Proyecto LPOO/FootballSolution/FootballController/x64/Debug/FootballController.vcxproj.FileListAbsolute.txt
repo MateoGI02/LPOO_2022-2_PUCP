@@ -1,0 +1,2 @@
+C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\FootballController\x64\Debug\FootballController.vcxproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\FootballController\x64\Debug\FootballController.vcxproj.CopyComplete

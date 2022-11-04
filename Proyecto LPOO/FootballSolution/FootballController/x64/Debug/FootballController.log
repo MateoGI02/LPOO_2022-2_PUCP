@@ -1,0 +1,5 @@
+﻿  FootballController.cpp
+C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\FootballController\FootballController.cpp(401,35): warning C4101: 'ex': variable local sin referencia
+C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\FootballController\FootballController.cpp(403,23): warning C4101: 'ex': variable local sin referencia
+  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  FootballController.vcxproj -> C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\x64\Debug\FootballController.dll

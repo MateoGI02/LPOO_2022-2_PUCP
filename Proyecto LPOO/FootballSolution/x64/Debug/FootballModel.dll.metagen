@@ -1,0 +1,243 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly FootballModel, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class FootballModel.person: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte[] Photo : Public
+  Properties:
+    Int32 Id   'get set' : 
+    SByte Status 'get set' IsSignUnspecifiedByte : 
+    System.String Nationality 'get set' : 
+    Int32 Age  'get set' : 
+    System.String Surname 'get set' : 
+    System.String Name 'get set' : 
+    System.String DocNumber 'get set' : 
+    Int32 Number 'get set' : 
+  Methods:
+    get_Number(): PrivateScope, Public, HideBySig, SpecialName
+    set_Number(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DocNumber(): PrivateScope, Public, HideBySig, SpecialName
+    set_DocNumber(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    set_Name(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Surname(): PrivateScope, Public, HideBySig, SpecialName
+    set_Surname(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Age(): PrivateScope, Public, HideBySig, SpecialName
+    set_Age(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Nationality(): PrivateScope, Public, HideBySig, SpecialName
+    set_Nationality(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Status(): PrivateScope, Public, HideBySig, SpecialName
+    set_Status(SByte IsSignUnspecifiedByte): PrivateScope, Public, HideBySig, SpecialName
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class FootballModel.DT: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :FootballModel.person
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Password 'get set' : 
+    System.String Username 'get set' : 
+    System.String DocNumber 'get set' : 
+    Int32 Age  'get set' : 
+    System.String Surname 'get set' : 
+    System.String Name 'get set' : 
+  Methods:
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    set_Name(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Surname(): PrivateScope, Public, HideBySig, SpecialName
+    set_Surname(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Age(): PrivateScope, Public, HideBySig, SpecialName
+    set_Age(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DocNumber(): PrivateScope, Public, HideBySig, SpecialName
+    set_DocNumber(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Username(): PrivateScope, Public, HideBySig, SpecialName
+    set_Username(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Password(): PrivateScope, Public, HideBySig, SpecialName
+    set_Password(String): PrivateScope, Public, HideBySig, SpecialName
+Class FootballModel.Footballteams: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :FootballModel.DT
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte[] Photo : Public
+  Properties:
+    SByte Status 'get set' IsSignUnspecifiedByte : 
+    Int32 numplayers 'get set' : 
+    System.String NameTeam 'get set' : 
+    Int32 Id   'get set' : 
+  Methods:
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_NameTeam(): PrivateScope, Public, HideBySig, SpecialName
+    set_NameTeam(String): PrivateScope, Public, HideBySig, SpecialName
+    get_numplayers(): PrivateScope, Public, HideBySig, SpecialName
+    set_numplayers(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Status(): PrivateScope, Public, HideBySig, SpecialName
+    set_Status(SByte IsSignUnspecifiedByte): PrivateScope, Public, HideBySig, SpecialName
+Class FootballModel.Organizer: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :FootballModel.person
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    SByte Status 'get set' IsSignUnspecifiedByte : 
+    Int32 Age  'get set' : 
+    System.String Surname 'get set' : 
+    System.String Name 'get set' : 
+    Int32 Id   'get set' : 
+  Methods:
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    set_Name(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Surname(): PrivateScope, Public, HideBySig, SpecialName
+    set_Surname(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Age(): PrivateScope, Public, HideBySig, SpecialName
+    set_Age(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Status(): PrivateScope, Public, HideBySig, SpecialName
+    set_Status(SByte IsSignUnspecifiedByte): PrivateScope, Public, HideBySig, SpecialName
+Class FootballModel.Referee: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :FootballModel.person
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String DocNumber 'get set' : 
+    Int32 Age  'get set' : 
+    System.String Surname 'get set' : 
+    System.String Name 'get set' : 
+  Methods:
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    set_Name(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Surname(): PrivateScope, Public, HideBySig, SpecialName
+    set_Surname(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Age(): PrivateScope, Public, HideBySig, SpecialName
+    set_Age(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DocNumber(): PrivateScope, Public, HideBySig, SpecialName
+    set_DocNumber(String): PrivateScope, Public, HideBySig, SpecialName
+Class FootballModel.Tournament: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :FootballModel.Organizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String IniGame 'get set' : 
+    System.String Premio 'get set' : 
+    System.String Enddate 'get set' : 
+    System.String Inidate 'get set' : 
+    Int32 numteams 'get set' : 
+    System.String NameTournament 'get set' : 
+  Methods:
+    get_NameTournament(): PrivateScope, Public, HideBySig, SpecialName
+    set_NameTournament(String): PrivateScope, Public, HideBySig, SpecialName
+    get_numteams(): PrivateScope, Public, HideBySig, SpecialName
+    set_numteams(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Inidate(): PrivateScope, Public, HideBySig, SpecialName
+    set_Inidate(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Enddate(): PrivateScope, Public, HideBySig, SpecialName
+    set_Enddate(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Premio(): PrivateScope, Public, HideBySig, SpecialName
+    set_Premio(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IniGame(): PrivateScope, Public, HideBySig, SpecialName
+    set_IniGame(String): PrivateScope, Public, HideBySig, SpecialName
+Class FootballModel.corners: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 visitc 'get set' : 
+    Int32 localc 'get set' : 
+  Methods:
+    get_localc(): PrivateScope, Public, HideBySig, SpecialName
+    set_localc(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_visitc(): PrivateScope, Public, HideBySig, SpecialName
+    set_visitc(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class FootballModel.Class1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FootballModel.goals: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String stricker 'get set' : 
+    System.String time 'get set' : 
+    Int32 visitg 'get set' : 
+    Int32 localg 'get set' : 
+  Methods:
+    get_localg(): PrivateScope, Public, HideBySig, SpecialName
+    set_localg(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_visitg(): PrivateScope, Public, HideBySig, SpecialName
+    set_visitg(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_time(): PrivateScope, Public, HideBySig, SpecialName
+    set_time(String): PrivateScope, Public, HideBySig, SpecialName
+    get_stricker(): PrivateScope, Public, HideBySig, SpecialName
+    set_stricker(String): PrivateScope, Public, HideBySig, SpecialName
+Class FootballModel.match: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String date 'get set' : 
+    SByte result 'get set' IsSignUnspecifiedByte : 
+  Methods:
+    get_result(): PrivateScope, Public, HideBySig, SpecialName
+    set_result(SByte IsSignUnspecifiedByte): PrivateScope, Public, HideBySig, SpecialName
+    get_date(): PrivateScope, Public, HideBySig, SpecialName
+    set_date(String): PrivateScope, Public, HideBySig, SpecialName
+Class FootballModel.matchdetails: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 visitpoints 'get set' : 
+    Int32 localpoints 'get set' : 
+  Methods:
+    get_localpoints(): PrivateScope, Public, HideBySig, SpecialName
+    set_localpoints(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_visitpoints(): PrivateScope, Public, HideBySig, SpecialName
+    set_visitpoints(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class FootballModel.Player: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+  :FootballModel.person
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 Id   'get set' : 
+    SByte Status 'get set' IsSignUnspecifiedByte : 
+    System.String Number 'get set' : 
+    System.String Position 'get set' : 
+  Methods:
+    get_Position(): PrivateScope, Public, HideBySig, SpecialName
+    set_Position(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Number(): PrivateScope, Public, HideBySig, SpecialName
+    set_Number(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Status(): PrivateScope, Public, HideBySig, SpecialName
+    set_Status(SByte IsSignUnspecifiedByte): PrivateScope, Public, HideBySig, SpecialName
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class FootballModel.Stadium: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    SByte Status 'get set' IsSignUnspecifiedByte : 
+    System.String Direction 'get set' : 
+    System.String Place 'get set' : 
+    System.String Name 'get set' : 
+    Int32 Id   'get set' : 
+  Methods:
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    set_Name(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Place(): PrivateScope, Public, HideBySig, SpecialName
+    set_Place(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Direction(): PrivateScope, Public, HideBySig, SpecialName
+    set_Direction(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Status(): PrivateScope, Public, HideBySig, SpecialName
+    set_Status(SByte IsSignUnspecifiedByte): PrivateScope, Public, HideBySig, SpecialName
+Class FootballModel.targets: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String playerwr 'get set' : 
+    System.String playerwy 'get set' : 
+    Int32 red  'get set' : 
+    Int32 yellow 'get set' : 
+  Methods:
+    get_yellow(): PrivateScope, Public, HideBySig, SpecialName
+    set_yellow(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_red(): PrivateScope, Public, HideBySig, SpecialName
+    set_red(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_playerwy(): PrivateScope, Public, HideBySig, SpecialName
+    set_playerwy(String): PrivateScope, Public, HideBySig, SpecialName
+    get_playerwr(): PrivateScope, Public, HideBySig, SpecialName
+    set_playerwr(String): PrivateScope, Public, HideBySig, SpecialName

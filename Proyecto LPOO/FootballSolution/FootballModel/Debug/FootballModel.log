@@ -1,0 +1,20 @@
+﻿  pch.cpp
+  arbitro.cpp
+  AssemblyInfo.cpp
+  campeonato.cpp
+  Class1.cpp
+  corners.cpp
+  DT.cpp
+  FootballModel.cpp
+  footballteams.cpp
+  goals.cpp
+  match.cpp
+  matchdetails.cpp
+  person.cpp
+  Player.cpp
+  Stadium.cpp
+  targets.cpp
+  Generando código...
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  arbitro.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  FootballModel.vcxproj -> C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\Debug\FootballModel.dll

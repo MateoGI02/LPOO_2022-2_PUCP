@@ -1,0 +1,54 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly FootballController, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly FootballModel, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class FootballController.Controller: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    AddPlayer(Player): PrivateScope, Public, Static, HideBySig
+    UpdatePlayer(Player): PrivateScope, Public, Static, HideBySig
+    DeletePlayer(Int32): PrivateScope, Public, Static, HideBySig
+    QueryAllPlayers(): PrivateScope, Public, Static, HideBySig
+    QueryPlayerById(Int32): PrivateScope, Public, Static, HideBySig
+    QueryAllPositions(): PrivateScope, Public, Static, HideBySig
+    PersistProducts(): PrivateScope, Public, Static, HideBySig
+    LoadProductsData(): PrivateScope, Public, Static, HideBySig
+    AddReferee(Referee): PrivateScope, Public, Static, HideBySig
+    UpdateReferee(Referee): PrivateScope, Public, Static, HideBySig
+    DeleteReferee(Int32): PrivateScope, Public, Static, HideBySig
+    QueryAllReferees(): PrivateScope, Public, Static, HideBySig
+    QueryRefereesByName(String): PrivateScope, Public, Static, HideBySig
+    QueryRefereeById(Int32): PrivateScope, Public, Static, HideBySig
+    PersistReferees(): PrivateScope, Public, Static, HideBySig
+    LoadRefereesData(): PrivateScope, Public, Static, HideBySig
+    AddStadium(Stadium): PrivateScope, Public, Static, HideBySig
+    UpdateStadium(Stadium): PrivateScope, Public, Static, HideBySig
+    DeleteStadium(Int32): PrivateScope, Public, Static, HideBySig
+    QueryAllStadium(): PrivateScope, Public, Static, HideBySig
+    QueryStadiumById(Int32): PrivateScope, Public, Static, HideBySig
+    PersisStadiums(): PrivateScope, Public, Static, HideBySig
+    LoadStadiumsData(): PrivateScope, Public, Static, HideBySig
+    PersistFootballteams(): PrivateScope, Public, Static, HideBySig
+    LoadFootballteamsData(): PrivateScope, Public, Static, HideBySig
+    AddFootballteams(Footballteams): PrivateScope, Public, Static, HideBySig
+    UpdateFootballteams(Footballteams): PrivateScope, Public, Static, HideBySig
+    DeleteFootballteams(Int32): PrivateScope, Public, Static, HideBySig
+    QueryAllFootballteams(): PrivateScope, Public, Static, HideBySig
+    QueryFootballteamsById(Int32): PrivateScope, Public, Static, HideBySig
+    PersisTournaments(): PrivateScope, Public, Static, HideBySig
+    LoadTournamentsData(): PrivateScope, Public, Static, HideBySig
+    AddTournaments(Tournament): PrivateScope, Public, Static, HideBySig
+    UpdateTournaments(Tournament): PrivateScope, Public, Static, HideBySig
+    DeleteTournaments(Int32): PrivateScope, Public, Static, HideBySig
+    QueryAllTournaments(): PrivateScope, Public, Static, HideBySig
+    QueryTournamentsById(Int32): PrivateScope, Public, Static, HideBySig
+    Login(String, String): PrivateScope, Public, Static, HideBySig
