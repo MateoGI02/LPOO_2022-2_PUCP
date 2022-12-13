@@ -1,8 +1,10 @@
+  FootballView.DatosMatch.resources - Embedded, ContainedInManifestFile, 
   FootballView.FootballMainForm.resources - Embedded, ContainedInManifestFile, 
   FootballView.InscriptionForm.resources - Embedded, ContainedInManifestFile, 
   FootballView.InscriptionSearchFrom.resources - Embedded, ContainedInManifestFile, 
   FootballView.LoginForm.resources - Embedded, ContainedInManifestFile, 
   FootballView.Results1.resources - Embedded, ContainedInManifestFile, 
+  FootballView.TablePositions.resources - Embedded, ContainedInManifestFile, 
   FootballView.TeamsForm.resources - Embedded, ContainedInManifestFile, 
   FootballView.TournamentForm.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -16,9 +18,13 @@ Assembly FootballModel, Version=1.0.*, Culture=Todos los idiomas (todos los paí
 	hash=None, flags=None
 Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Assembly System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
 Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
 Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35: 
 	hash=None, flags=None
 Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
@@ -31,36 +37,57 @@ Class ComboBoxItem: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Int32 Value : Public
   Methods:
     ToString(): PrivateScope, Public, Virtual, HideBySig
-Class FootballView.InscriptionSearchFrom: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class FootballView.InscriptionForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class FootballView.DatosMatch: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
-    RefreshPlayer(): PrivateScope, Public, HideBySig
-    RefreshRefereesDGV(): PrivateScope, Public, HideBySig
-    RefreshStadiumsDGV(): PrivateScope, Public, HideBySig
-    AddPersonToInscriptions(Referee): PrivateScope, Public, HideBySig
+    FillcmbMatchRes(): PrivateScope, Public, HideBySig
+    RefreshMatchResult(): PrivateScope, Public, HideBySig
+    Dato(): PrivateScope, Public, HideBySig
+Class FootballView.InscriptionSearchFrom: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FootballView.TeamsForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     RefreshTeamDGV(): PrivateScope, Public, HideBySig
-Class FootballView.LoginForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FootballView.TournamentForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    FootballModel.Organizer Organ : Public, Static
   Methods:
     RefreshTournament(): PrivateScope, Public, HideBySig
+    Todos_Match(): PrivateScope, Public, HideBySig
+    RefreshMatch(): PrivateScope, Public, HideBySig
+Class FootballView.InscriptionForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    FootballModel.Organizer Organi : Public, Static
+  Methods:
+    RefreshPlayer(): PrivateScope, Public, HideBySig
+    RefreshOrganizer(): PrivateScope, Public, HideBySig
+    ClearControlsOrganizer(): PrivateScope, Public, HideBySig
+    RefreshDt(): PrivateScope, Public, HideBySig
+    ClearDT(): PrivateScope, Public, HideBySig
+    RefreshRefereesDGV(): PrivateScope, Public, HideBySig
+    RefreshStadiumsDGV(): PrivateScope, Public, HideBySig
+Class FootballView.LoginForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FootballView.Results1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class FootballView.TablePositions: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class FootballView.FootballMainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class FootballView.Table: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Fields:
+    FootballModel.Organizer Orga : Public, Static
+Class FootballView.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

@@ -1,5 +1,23 @@
-﻿  FootballController.cpp
-C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\FootballController\FootballController.cpp(401,35): warning C4101: 'ex': variable local sin referencia
-C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\FootballController\FootballController.cpp(403,23): warning C4101: 'ex': variable local sin referencia
+﻿  pch.cpp
+  AssemblyInfo.cpp
+  FootballController.cpp
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(488,35): warning C4101: 'ex': variable local sin referencia
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(490,23): warning C4101: 'ex': variable local sin referencia
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(515,35): warning C4101: 'ex': variable local sin referencia
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(517,23): warning C4101: 'ex': variable local sin referencia
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(541,35): warning C4101: 'ex': variable local sin referencia
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(543,23): warning C4101: 'ex': variable local sin referencia
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(567,35): warning C4101: 'ex': variable local sin referencia
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(569,23): warning C4101: 'ex': variable local sin referencia
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(594,35): warning C4101: 'ex': variable local sin referencia
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(596,23): warning C4101: 'ex': variable local sin referencia
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(621,35): warning C4101: 'ex': variable local sin referencia
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(623,23): warning C4101: 'ex': variable local sin referencia
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(647,35): warning C4101: 'ex': variable local sin referencia
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(649,23): warning C4101: 'ex': variable local sin referencia
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(674,35): warning C4101: 'ex': variable local sin referencia
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\FootballController.cpp(676,23): warning C4101: 'ex': variable local sin referencia
+  Generando código...
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
   AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  FootballController.vcxproj -> C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\x64\Debug\FootballController.dll
+  FootballController.vcxproj -> C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\x64\Debug\FootballController.dll

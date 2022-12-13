@@ -1,1 +1,6 @@
 C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\FootballModel\x64\Debug\FootballModel.vcxproj.AssemblyReference.cache
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballModel\x64\Debug\FootballModel.vcxproj.AssemblyReference.cache
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballModel\x64\Debug\FootballModel.vcxproj.AssemblyReference.cache
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballModel\x64\Debug\FootballModel.vcxproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballModel\x64\Debug\FootballModel.vcxproj.AssemblyReference.cache
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballModel\x64\Debug\FootballModel.vcxproj.AssemblyReference.cache

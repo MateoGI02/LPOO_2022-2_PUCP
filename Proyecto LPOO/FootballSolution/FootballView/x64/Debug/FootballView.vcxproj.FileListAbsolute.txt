@@ -9,3 +9,66 @@ C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\Football
 C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\FootballView\x64\Debug\FootballView.TournamentForm.resources
 C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.GenerateResource.cache
 C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.CopyComplete
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.AssemblyReference.cache
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.FootballMainForm.resources
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.InscriptionForm.resources
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.InscriptionSearchFrom.resources
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.LoginForm.resources
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.Results1.resources
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TeamsForm.resources
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TournamentForm.resources
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.GenerateResource.cache
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.CopyComplete
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.AssemblyReference.cache
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.FootballMainForm.resources
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.InscriptionForm.resources
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.InscriptionSearchFrom.resources
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.LoginForm.resources
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.Results1.resources
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TeamsForm.resources
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TournamentForm.resources
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.GenerateResource.cache
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.CopyComplete
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.AssemblyReference.cache
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.SuggestedBindingRedirects.cache
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.DatosMatch.resources
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.FootballMainForm.resources
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.InscriptionForm.resources
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.InscriptionSearchFrom.resources
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.LoginForm.resources
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.Results1.resources
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TeamsForm.resources
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TournamentForm.resources
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.GenerateResource.cache
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.CopyComplete
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TablePositions.resources
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.DatosMatch.resources
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.FootballMainForm.resources
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.InscriptionForm.resources
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.InscriptionSearchFrom.resources
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.LoginForm.resources
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.Results1.resources
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TablePositions.resources
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TeamsForm.resources
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TournamentForm.resources
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.GenerateResource.cache
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.CopyComplete
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.AssemblyReference.cache
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.DatosMatch.resources
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.FootballMainForm.resources
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.InscriptionForm.resources
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.InscriptionSearchFrom.resources
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.LoginForm.resources
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.Results1.resources
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TablePositions.resources
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TeamsForm.resources
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TournamentForm.resources
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.GenerateResource.cache
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.CopyComplete
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.DatosMatch.resources
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TablePositions.resources

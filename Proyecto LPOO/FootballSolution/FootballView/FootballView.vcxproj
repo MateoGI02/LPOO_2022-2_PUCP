@@ -128,6 +128,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ComboBoxItem.h" />
+    <ClInclude Include="DatosMatch.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="FootballMainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -140,15 +143,15 @@
     <ClInclude Include="LoginForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MyForm1.h">
+    <ClInclude Include="MyForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="TablePositions.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Results1.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Table.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="TeamsForm.h">
@@ -161,11 +164,13 @@
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="ComboBoxItem.cpp" />
+    <ClCompile Include="DatosMatch.cpp" />
     <ClCompile Include="FootballMainForm.cpp" />
     <ClCompile Include="InscriptionForm.cpp" />
     <ClCompile Include="FootballView.cpp" />
     <ClCompile Include="InscriptionSearchFrom.cpp" />
     <ClCompile Include="LoginForm.cpp" />
+    <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -173,7 +178,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Results1.cpp" />
-    <ClCompile Include="Table.cpp" />
+    <ClCompile Include="TablePositions.cpp" />
     <ClCompile Include="TeamsForm.cpp" />
     <ClCompile Include="TournamentForm.cpp" />
   </ItemGroup>
@@ -183,11 +188,16 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DatosMatch.resx">
+      <DependentUpon>DatosMatch.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FootballMainForm.resx">
       <DependentUpon>FootballMainForm.h</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Results1.resx">
       <DependentUpon>Results1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TablePositions.resx">
+      <DependentUpon>TablePositions.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeamsForm.resx">
       <DependentUpon>TeamsForm.h</DependentUpon>

@@ -38,9 +38,6 @@
     <ClInclude Include="TournamentForm.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="MyForm1.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="ComboBoxItem.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -53,7 +50,13 @@
     <ClInclude Include="Results1.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Table.h">
+    <ClInclude Include="MyForm.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="DatosMatch.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="TablePositions.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
@@ -91,7 +94,13 @@
     <ClCompile Include="Results1.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Table.cpp">
+    <ClCompile Include="MyForm.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="DatosMatch.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="TablePositions.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

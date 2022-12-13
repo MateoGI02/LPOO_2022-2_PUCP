@@ -1,2 +1,12 @@
 C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\FootballController\x64\Debug\FootballController.vcxproj.AssemblyReference.cache
 C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\FootballController\x64\Debug\FootballController.vcxproj.CopyComplete
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\x64\Debug\FootballController.vcxproj.AssemblyReference.cache
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\x64\Debug\FootballController.vcxproj.CopyComplete
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\x64\Debug\FootballController.vcxproj.AssemblyReference.cache
+C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\x64\Debug\FootballController.vcxproj.CopyComplete
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\x64\Debug\FootballController.vcxproj.AssemblyReference.cache
+D:\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballController\x64\Debug\FootballController.vcxproj.CopyComplete
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballController\x64\Debug\FootballController.vcxproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\Proyecto LPOO FINAL\Proyecto LPOO\FootballSolution\FootballController\x64\Debug\FootballController.vcxproj.CopyComplete
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballController\x64\Debug\FootballController.vcxproj.AssemblyReference.cache
+C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballController\x64\Debug\FootballController.vcxproj.CopyComplete

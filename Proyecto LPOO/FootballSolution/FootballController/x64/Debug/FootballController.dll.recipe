@@ -2,10 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\x64\Debug\FootballModel.dll</FullPath>
+      <FullPath>C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\x64\Debug\FootballModel.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\LENOVO\Desktop\Proyecto LPOO\FootballSolution\FootballSolution\x64\Debug\FootballController.dll</FullPath>
+      <FullPath>C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\x64\Debug\FootballController.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

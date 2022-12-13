@@ -14,6 +14,14 @@ Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c5619
 Class FootballController.Controller: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
+    AddMatch(match): PrivateScope, Public, Static, HideBySig
+    UpdateMatch(match): PrivateScope, Public, Static, HideBySig
+    DeleteMatch(match): PrivateScope, Public, Static, HideBySig
+    QueryAllMatchs(): PrivateScope, Public, Static, HideBySig
+    QueryMatchByTournament(Int32): PrivateScope, Public, Static, HideBySig
+    QueryMatchById(Int32, Int32): PrivateScope, Public, Static, HideBySig
+    PersisMatch(): PrivateScope, Public, Static, HideBySig
+    LoadMatchData(): PrivateScope, Public, Static, HideBySig
     AddPlayer(Player): PrivateScope, Public, Static, HideBySig
     UpdatePlayer(Player): PrivateScope, Public, Static, HideBySig
     DeletePlayer(Int32): PrivateScope, Public, Static, HideBySig
@@ -22,12 +30,27 @@ Class FootballController.Controller: AutoLayout, AnsiClass, Class, Public, Befor
     QueryAllPositions(): PrivateScope, Public, Static, HideBySig
     PersistProducts(): PrivateScope, Public, Static, HideBySig
     LoadProductsData(): PrivateScope, Public, Static, HideBySig
+    AddDT(DT): PrivateScope, Public, Static, HideBySig
+    UpdateDt(DT): PrivateScope, Public, Static, HideBySig
+    DeleteDt(Int32): PrivateScope, Public, Static, HideBySig
+    QueryAllDt(): PrivateScope, Public, Static, HideBySig
+    QueryDtById(Int32): PrivateScope, Public, Static, HideBySig
+    PersistDt(): PrivateScope, Public, Static, HideBySig
+    LoadDtData(): PrivateScope, Public, Static, HideBySig
+    AddOrganizer(Organizer): PrivateScope, Public, Static, HideBySig
+    UpdateOrganizer(Organizer): PrivateScope, Public, Static, HideBySig
+    DeleteOrganizer(Int32): PrivateScope, Public, Static, HideBySig
+    QueryAllOrganizer(): PrivateScope, Public, Static, HideBySig
+    QueryOrganizerById(Int32): PrivateScope, Public, Static, HideBySig
+    PersistOrganizer(): PrivateScope, Public, Static, HideBySig
+    LoadOrganizerData(): PrivateScope, Public, Static, HideBySig
     AddReferee(Referee): PrivateScope, Public, Static, HideBySig
     UpdateReferee(Referee): PrivateScope, Public, Static, HideBySig
     DeleteReferee(Int32): PrivateScope, Public, Static, HideBySig
     QueryAllReferees(): PrivateScope, Public, Static, HideBySig
     QueryRefereesByName(String): PrivateScope, Public, Static, HideBySig
     QueryRefereeById(Int32): PrivateScope, Public, Static, HideBySig
+    QueryAllPositionsReferee(): PrivateScope, Public, Static, HideBySig
     PersistReferees(): PrivateScope, Public, Static, HideBySig
     LoadRefereesData(): PrivateScope, Public, Static, HideBySig
     AddStadium(Stadium): PrivateScope, Public, Static, HideBySig
