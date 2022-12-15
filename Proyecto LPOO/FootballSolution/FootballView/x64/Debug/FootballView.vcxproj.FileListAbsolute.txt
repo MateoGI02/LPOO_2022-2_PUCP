@@ -72,3 +72,16 @@ C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\F
 C:\Users\mateo\Downloads\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.CopyComplete
 C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.DatosMatch.resources
 C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TablePositions.resources
+C:\Users\mateo\OneDrive\Documentos\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.AssemblyReference.cache
+C:\Users\mateo\OneDrive\Documentos\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\mateo\OneDrive\Documentos\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.DatosMatch.resources
+C:\Users\mateo\OneDrive\Documentos\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.FootballMainForm.resources
+C:\Users\mateo\OneDrive\Documentos\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.InscriptionForm.resources
+C:\Users\mateo\OneDrive\Documentos\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.InscriptionSearchFrom.resources
+C:\Users\mateo\OneDrive\Documentos\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.LoginForm.resources
+C:\Users\mateo\OneDrive\Documentos\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.Results1.resources
+C:\Users\mateo\OneDrive\Documentos\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TablePositions.resources
+C:\Users\mateo\OneDrive\Documentos\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TeamsForm.resources
+C:\Users\mateo\OneDrive\Documentos\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.TournamentForm.resources
+C:\Users\mateo\OneDrive\Documentos\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.GenerateResource.cache
+C:\Users\mateo\OneDrive\Documentos\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\FootballView\x64\Debug\FootballView.vcxproj.CopyComplete

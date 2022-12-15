@@ -70,6 +70,7 @@ namespace FootballView {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(LoginForm::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->txtUsername = (gcnew System::Windows::Forms::TextBox());
@@ -81,68 +82,77 @@ namespace FootballView {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(35, 24);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label1->Location = System::Drawing::Point(47, 30);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(56, 13);
+			this->label1->Size = System::Drawing::Size(75, 16);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"USUARIO";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(19, 58);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label2->Location = System::Drawing::Point(25, 71);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(81, 13);
+			this->label2->Size = System::Drawing::Size(111, 16);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"CONTRASEÑA";
 			// 
 			// txtUsername
 			// 
-			this->txtUsername->Location = System::Drawing::Point(102, 21);
-			this->txtUsername->Margin = System::Windows::Forms::Padding(2);
+			this->txtUsername->Location = System::Drawing::Point(153, 24);
+			this->txtUsername->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtUsername->Name = L"txtUsername";
-			this->txtUsername->Size = System::Drawing::Size(150, 20);
+			this->txtUsername->Size = System::Drawing::Size(199, 22);
 			this->txtUsername->TabIndex = 2;
 			// 
 			// txtPassword
 			// 
-			this->txtPassword->Location = System::Drawing::Point(102, 55);
-			this->txtPassword->Margin = System::Windows::Forms::Padding(2);
+			this->txtPassword->Location = System::Drawing::Point(153, 66);
+			this->txtPassword->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtPassword->Name = L"txtPassword";
 			this->txtPassword->PasswordChar = '*';
-			this->txtPassword->Size = System::Drawing::Size(150, 20);
+			this->txtPassword->Size = System::Drawing::Size(199, 22);
 			this->txtPassword->TabIndex = 3;
 			this->txtPassword->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &LoginForm::txtPassword_KeyDown);
 			// 
 			// btnAccept
 			// 
-			this->btnAccept->Location = System::Drawing::Point(56, 93);
-			this->btnAccept->Margin = System::Windows::Forms::Padding(2);
+			this->btnAccept->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->btnAccept->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btnAccept->Location = System::Drawing::Point(50, 114);
+			this->btnAccept->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnAccept->Name = L"btnAccept";
-			this->btnAccept->Size = System::Drawing::Size(84, 37);
+			this->btnAccept->Size = System::Drawing::Size(111, 46);
 			this->btnAccept->TabIndex = 4;
 			this->btnAccept->Text = L"Aceptar";
-			this->btnAccept->UseVisualStyleBackColor = true;
+			this->btnAccept->UseVisualStyleBackColor = false;
 			this->btnAccept->Click += gcnew System::EventHandler(this, &LoginForm::btnAccept_Click);
 			// 
 			// btnCancel
 			// 
-			this->btnCancel->Location = System::Drawing::Point(175, 93);
-			this->btnCancel->Margin = System::Windows::Forms::Padding(2);
+			this->btnCancel->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->btnCancel->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btnCancel->Location = System::Drawing::Point(233, 114);
+			this->btnCancel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnCancel->Name = L"btnCancel";
-			this->btnCancel->Size = System::Drawing::Size(89, 37);
+			this->btnCancel->Size = System::Drawing::Size(119, 46);
 			this->btnCancel->TabIndex = 5;
 			this->btnCancel->Text = L"Cancelar";
-			this->btnCancel->UseVisualStyleBackColor = true;
+			this->btnCancel->UseVisualStyleBackColor = false;
 			this->btnCancel->Click += gcnew System::EventHandler(this, &LoginForm::btnCancel_Click);
 			// 
 			// LoginForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(301, 141);
+			this->BackColor = System::Drawing::Color::DarkSeaGreen;
+			this->ClientSize = System::Drawing::Size(401, 174);
 			this->ControlBox = false;
 			this->Controls->Add(this->btnCancel);
 			this->Controls->Add(this->btnAccept);
@@ -150,7 +160,8 @@ namespace FootballView {
 			this->Controls->Add(this->txtUsername);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"LoginForm";
 			this->Text = L"Autenticación de usuario";
 			this->ResumeLayout(false);

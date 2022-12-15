@@ -14,6 +14,7 @@ Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c5619
 Class FootballController.Controller: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
+    GetConnection(): PrivateScope, Public, Static, HideBySig
     AddMatch(match): PrivateScope, Public, Static, HideBySig
     UpdateMatch(match): PrivateScope, Public, Static, HideBySig
     DeleteMatch(match): PrivateScope, Public, Static, HideBySig

@@ -1,18 +1,7 @@
-﻿  pch.cpp
-  AssemblyInfo.cpp
-  ComboBoxItem.cpp
-  DatosMatch.cpp
-  FootballMainForm.cpp
-  InscriptionForm.cpp
+﻿  FootballMainForm.cpp
   FootballView.cpp
-  InscriptionSearchFrom.cpp
+  InscriptionForm.cpp
   LoginForm.cpp
-  MyForm.cpp
-  Results1.cpp
-  TablePositions.cpp
-  TeamsForm.cpp
-  TournamentForm.cpp
   Generando código...
-  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
   AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   FootballView.vcxproj -> C:\Users\mateo\Downloads\LPOO_2022-2_PUCP\Proyecto LPOO\FootballSolution\x64\Debug\FootballView.exe

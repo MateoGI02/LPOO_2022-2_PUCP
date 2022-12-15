@@ -14,6 +14,8 @@ using namespace System;
 using namespace FootballModel;
 using namespace System::Collections::Generic;
 using namespace System::IO;
+using namespace System::Data::SqlClient;
+
 
 namespace FootballController {
 	public ref class Controller 
@@ -31,6 +33,7 @@ namespace FootballController {
 		// TODO: Agregue aquí los métodos de esta clase.
 
 		public:
+			static SqlConnection^ GetConnection();
 			//Match
 			static int FootballController::Controller::AddMatch(match^ match);
 			static int FootballController::Controller::UpdateMatch(match^ Match);

@@ -73,6 +73,7 @@ namespace FootballView {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(TablePositions::typeid));
 			this->bttTableTourPartido2 = (gcnew System::Windows::Forms::Button());
 			this->cmbTableMatchTour = (gcnew System::Windows::Forms::ComboBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -88,31 +89,35 @@ namespace FootballView {
 			// 
 			// bttTableTourPartido2
 			// 
-			this->bttTableTourPartido2->Location = System::Drawing::Point(256, 29);
-			this->bttTableTourPartido2->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->bttTableTourPartido2->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->bttTableTourPartido2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->bttTableTourPartido2->Location = System::Drawing::Point(342, 31);
+			this->bttTableTourPartido2->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->bttTableTourPartido2->Name = L"bttTableTourPartido2";
-			this->bttTableTourPartido2->Size = System::Drawing::Size(189, 19);
+			this->bttTableTourPartido2->Size = System::Drawing::Size(256, 29);
 			this->bttTableTourPartido2->TabIndex = 166;
 			this->bttTableTourPartido2->Text = L"SELECCIONAR CAMPEONATO";
-			this->bttTableTourPartido2->UseVisualStyleBackColor = true;
+			this->bttTableTourPartido2->UseVisualStyleBackColor = false;
 			this->bttTableTourPartido2->Click += gcnew System::EventHandler(this, &TablePositions::bttTableTourPartido2_Click);
 			// 
 			// cmbTableMatchTour
 			// 
 			this->cmbTableMatchTour->FormattingEnabled = true;
-			this->cmbTableMatchTour->Location = System::Drawing::Point(98, 28);
-			this->cmbTableMatchTour->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->cmbTableMatchTour->Location = System::Drawing::Point(131, 34);
+			this->cmbTableMatchTour->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->cmbTableMatchTour->Name = L"cmbTableMatchTour";
-			this->cmbTableMatchTour->Size = System::Drawing::Size(147, 21);
+			this->cmbTableMatchTour->Size = System::Drawing::Size(195, 24);
 			this->cmbTableMatchTour->TabIndex = 165;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(24, 28);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label2->Location = System::Drawing::Point(21, 34);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(73, 13);
+			this->label2->Size = System::Drawing::Size(103, 16);
 			this->label2->TabIndex = 164;
 			this->label2->Text = L"Campeonato: ";
 			// 
@@ -123,12 +128,12 @@ namespace FootballView {
 				this->dataGridViewTextBoxColumn3,
 					this->dataGridViewTextBoxColumn4, this->Column1, this->Column2, this->PP, this->PUNTOS
 			});
-			this->dgvTableTourSear->Location = System::Drawing::Point(11, 74);
-			this->dgvTableTourSear->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->dgvTableTourSear->Location = System::Drawing::Point(15, 91);
+			this->dgvTableTourSear->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->dgvTableTourSear->Name = L"dgvTableTourSear";
 			this->dgvTableTourSear->RowHeadersWidth = 51;
 			this->dgvTableTourSear->RowTemplate->Height = 24;
-			this->dgvTableTourSear->Size = System::Drawing::Size(515, 456);
+			this->dgvTableTourSear->Size = System::Drawing::Size(687, 561);
 			this->dgvTableTourSear->TabIndex = 167;
 			// 
 			// dataGridViewTextBoxColumn3
@@ -175,14 +180,16 @@ namespace FootballView {
 			// 
 			// TablePositions
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(533, 542);
+			this->BackColor = System::Drawing::Color::DarkSeaGreen;
+			this->ClientSize = System::Drawing::Size(711, 667);
 			this->Controls->Add(this->dgvTableTourSear);
 			this->Controls->Add(this->bttTableTourPartido2);
 			this->Controls->Add(this->cmbTableMatchTour);
 			this->Controls->Add(this->label2);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"TablePositions";
 			this->Text = L"Tabla de Posiciones";
 			this->Load += gcnew System::EventHandler(this, &TablePositions::TablePositions_Load);

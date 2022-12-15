@@ -24,6 +24,46 @@ int FootballController::Controller::AddOrganizer(Organizer^ organizer)
     OrganizerList->Add(organizer);
     PersistOrganizer();
     return 1;
+
+
+
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+   // SqlCommand^ comm = gcnew SqlCommand("INSERT INTO PRODUCT_JOSHUA"+"VALUES('"+ footballteams->NameTeam
+   //                                     + "','" + footballteams->numplayers + "','" + footballteams->numplayers + ")", conn);
+
+    String^ strCmd = "dbo.usp_AddORGANIZER";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@docNumber", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@name", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@surname", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@username", System::Data::SqlDbType::VarChar, 250);
+    //comm->Parameters->Add("iage", System::Data::SqlDbType::Int);
+
+
+    SqlParameter^ outputIdParam = gcnew SqlParameter("@id", System::Data::SqlDbType::Int);
+    outputIdParam->Direction = System::Data::ParameterDirection::Output;
+    comm->Parameters->Add(outputIdParam);
+    comm->Prepare();
+    comm->Parameters["@docNumber"]->Value = organizer->DocNumber;
+    comm->Parameters["@name"]->Value = organizer->Name;
+    comm->Parameters["@surname"]->Value = organizer->Surname;
+    comm->Parameters["@username"]->Value = organizer->Username;
+    //  comm->Parameters["@iage"]->Value = organizer->Age;
+
+      //Paso 3: Se ejecuta la sentencia
+    comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados 
+    int output_id = Convert::ToInt32(comm->Parameters["@id"]->Value);
+
+    //Paso 5: Se cierra la conexión
+    if (conn != nullptr) conn->Close();
+    return output_id;
 }
 int FootballController::Controller::UpdateOrganizer(Organizer^ organizer)
 {
@@ -53,6 +93,36 @@ List<Organizer^>^ FootballController::Controller::QueryAllOrganizer()
         activeOrganizerList->Add(OrganizerList[i]);
     }
     return activeOrganizerList;
+
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+    SqlCommand^ comm = gcnew SqlCommand("usp_QueryAllOrganizer", conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+
+    SqlDataReader^ reader = comm->ExecuteReader();
+
+    List<Organizer^>^ activeOrganizerList = gcnew List <Organizer^>();
+    //Paso 3: Se ejecuta la sentencia
+    while (reader->Read()) {
+        Organizer^ p = gcnew Organizer();
+        p->Id = Convert::ToInt32(reader["id"]->ToString());
+        p->DocNumber = reader["docNumber"]->ToString();
+        p->Name = reader["name"]->ToString();
+        p->Surname = reader["surname"]->ToString();
+        p->Username = reader["username"]->ToString();
+
+        activeOrganizerList->Add(p);
+    }
+
+    // Paso 4 (CRÍTICO): Cerrar la conexión.
+    if (reader != nullptr) reader->Close();
+    if (conn != nullptr) conn->Close();
+    return activeOrganizerList;
+    */
 }
 Organizer^ FootballController::Controller::QueryOrganizerById(int organizerId)
 {
@@ -61,6 +131,38 @@ Organizer^ FootballController::Controller::QueryOrganizerById(int organizerId)
             return OrganizerList[i];
         }
     return nullptr;
+
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+    SqlCommand^ comm = gcnew SqlCommand("usp_QueryOrganizerById", conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@vid", System::Data::SqlDbType::VarChar, 6);
+    comm->Prepare();
+    comm->Parameters["@vid"]->Value = organizerId;
+
+    // Paso 3: Se recorre los registros retornados
+    SqlDataReader^ reader = comm->ExecuteReader();
+
+    // Paso 4: Se procesan los resultados
+    Organizer^ p;
+    if (reader->Read()) {
+        p = gcnew Organizer();
+        p->Id = Convert::ToInt32(reader["id"]->ToString());
+        p->DocNumber = reader["docNumber"]->ToString();
+        p->Name = reader["name"]->ToString();
+        p->Surname = reader["surname"]->ToString();
+        p->Username = reader["username"]->ToString();
+    }
+
+    // Paso 4 (CRÍTICO): Cerrar la conexión.
+    if (reader != nullptr) reader->Close();
+    if (conn != nullptr) conn->Close();
+    return p;
+    */
 }
 //----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -71,6 +173,44 @@ int FootballController::Controller::AddTournaments(Tournament^ tournaments)
     tournamentList->Add(tournaments);
     PersisTournaments();
     return 1;
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+   // SqlCommand^ comm = gcnew SqlCommand("INSERT INTO PRODUCT_JOSHUA"+"VALUES('"+ footballteams->NameTeam
+   //                                     + "','" + footballteams->numplayers + "','" + footballteams->numplayers + ")", conn);
+
+    String^ strCmd = "dbo.usp_AddTOURNAMENT";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@nameTournament", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@organizer", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@premio", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@numteams", System::Data::SqlDbType::Int);
+
+    SqlParameter^ outputIdParam = gcnew SqlParameter("@id", System::Data::SqlDbType::Int);
+    outputIdParam->Direction = System::Data::ParameterDirection::Output;
+    comm->Parameters->Add(outputIdParam);
+    comm->Prepare();
+    comm->Parameters["@nameTournament"]->Value = tournaments->NameTournament;
+    comm->Parameters["@organizer"]->Value = tournaments->Organizer;
+    comm->Parameters["@premio"]->Value = tournaments->Premio;
+    comm->Parameters["@numteams"]->Value = tournaments->numteams;
+
+    //Paso 3: Se ejecuta la sentencia
+    comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados
+    int output_id = Convert::ToInt32(comm->Parameters["@id"]->Value);
+
+    //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+
+    return output_id;
+    */
 }
 int FootballController::Controller::UpdateTournaments(Tournament^ tournaments)
 {
@@ -81,6 +221,41 @@ int FootballController::Controller::UpdateTournaments(Tournament^ tournaments)
             return 1;
         }
     return 0;
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+   // SqlCommand^ comm = gcnew SqlCommand("INSERT INTO PRODUCT_JOSHUA"+"VALUES('"+ footballteams->NameTeam
+    //                                    + "','" + footballteams->numplayers + "','" + footballteams->numplayers + ")", conn);
+
+    String^ strCmd = "dbo.usp_UpdateORGANIZER";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@id", System::Data::SqlDbType::Int);
+    comm->Parameters->Add("@nameTournament", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@organizer", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@premio", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@numteams", System::Data::SqlDbType::Int);
+
+    comm->Prepare();
+    comm->Parameters["@nameTournament"]->Value = tournaments->NameTournament;
+    comm->Parameters["@organizer"]->Value = tournaments->Organizer;
+    comm->Parameters["@premio"]->Value = tournaments->Premio;
+    comm->Parameters["@numteams"]->Value = tournaments->numteams;
+
+
+    //Paso 3: Se ejecuta la sentencia
+    int res = comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados (No aplica)
+
+    //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+
+    return res;
+    */
 }
 int FootballController::Controller::DeleteTournaments(int tournamentsId)
 {
@@ -91,6 +266,23 @@ int FootballController::Controller::DeleteTournaments(int tournamentsId)
             return 1;
         }
     return 0;
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+    SqlCommand^ comm = gcnew SqlCommand("UPDATE TOURNAMENTS" + "" + "WHERE id = " + tournamentsId, conn);
+
+    //Paso 3: Se ejecuta la sentencia
+    int res = comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados (No aplica)
+
+  //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+    return res;
+    */
 }
 List<Tournament^>^ FootballController::Controller::QueryAllTournaments()
 {
@@ -100,6 +292,46 @@ List<Tournament^>^ FootballController::Controller::QueryAllTournaments()
         activeTtournamentList->Add(tournamentList[i]);
     }
     return activeTtournamentList;
+
+    /*
+    List<Tournament^>^ activeTtournamentList = gcnew List<Tournament^>();
+
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+   // SqlCommand^ comm = gcnew SqlCommand("SELECT * FROM PRODUCT_JOSHUA"
+   //             + "WHERE NameTeam LIKE '%" + value + "%'", conn);
+
+    String^ strCmd = "dbo.usp_QueryDTByNameTournament";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@value", System::Data::SqlDbType::VarChar, 250);
+    comm->Prepare();
+    comm->Parameters["@value"]->Value = DBNull::Value;
+    //Paso 3: Se ejecuta la sentencia
+    SqlDataReader^ reader = comm->ExecuteReader();
+
+    //Paso 4: Se procesan los resultados
+    Tournament^ p;
+    while (reader->Read()) {
+        p = gcnew Tournament();
+        p->Id = Convert::ToInt32(reader["id"]->ToString());
+        p->NameTournament = reader["nameTournament"]->ToString();
+        // p->Organizer = reader["organizer"]->ToString();
+        p->Premio = reader["premio"]->ToString();
+        p->numteams = Convert::ToInt32(reader["numteams"]->ToString());
+
+        activeTtournamentList->Add(p);
+    }
+
+    //Paso 5: Se cierran los obtejos de conexión
+    reader->Close();
+    conn->Close();
+
+    return activeTtournamentList;
+    */
 }
 Tournament^ FootballController::Controller::QueryTournamentsById(int tournamentsId)
 {
@@ -108,8 +340,35 @@ Tournament^ FootballController::Controller::QueryTournamentsById(int tournaments
             return tournamentList[i];
         }
     return nullptr;
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+    SqlCommand^ comm = gcnew SqlCommand("SELECT * FROM TOURNAMENT AND id=" + tournamentsId, conn);
+
+    //Paso 3: Se ejecuta la sentencia
+    SqlDataReader^ reader = comm->ExecuteReader();
+
+    //Paso 4: Se procesan los resultados
+    Tournament^ p;
+    if (reader->Read()) {
+        p = gcnew Tournament();
+        p->Id = Convert::ToInt32(reader["id"]->ToString());
+        p->NameTournament = reader["nameTournament"]->ToString();
+        // p->Organizer = reader["organizer"]->ToString();
+        p->Premio = reader["premio"]->ToString();
+        p->numteams = Convert::ToInt32(reader["numteams"]->ToString());
+    }
+
+    //Paso 5: Se cierran los obtejos de conexión
+    reader->Close();
+    conn->Close();
+    return p;
+    */
 }
 //----------------------------------------------------------------------------------------------------------------------------------------
+
 
 // Método DT
 int FootballController::Controller::AddDT(DT^ dt)
@@ -117,6 +376,44 @@ int FootballController::Controller::AddDT(DT^ dt)
     DtList->Add(dt);
     PersistDt();
     return 1;
+
+
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+  //  SqlCommand^ comm = gcnew SqlCommand("INSERT INTO PRODUCT_JOSHUA"+"VALUES('"+ footballteams->NameTeam
+  //                                      + "','" + footballteams->numplayers + "','" + footballteams->numplayers + ")", conn);
+
+    String^ strCmd = "dbo.usp_AddDT";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@docNumber", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@name", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@surname", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@experience", System::Data::SqlDbType::Int);
+
+    SqlParameter^ outputIdParam = gcnew SqlParameter("@id", System::Data::SqlDbType::Int);
+    outputIdParam->Direction = System::Data::ParameterDirection::Output;
+    comm->Parameters->Add(outputIdParam);
+    comm->Prepare();
+    comm->Parameters["@docNumber"]->Value = dt->DocNumber;
+    comm->Parameters["@name"]->Value = dt->Name;
+    comm->Parameters["@surname"]->Value = dt->Surname;
+    comm->Parameters["@experience"]->Value = dt->Experience;
+
+    //Paso 3: Se ejecuta la sentencia
+    comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados 
+    int output_id = Convert::ToInt32(comm->Parameters["@id"]->Value);
+
+    //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+
+    return output_id;
+
 }
 int FootballController::Controller::UpdateDt(DT^ dt)
 {
@@ -127,6 +424,43 @@ int FootballController::Controller::UpdateDt(DT^ dt)
             return 1;
         }
     return 0;
+
+    /*
+    //Paso 1: se obtiene la conexion
+        SqlConnection ^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+   // SqlCommand^ comm = gcnew SqlCommand("INSERT INTO PRODUCT_JOSHUA"+"VALUES('"+ footballteams->NameTeam
+    //                                    + "','" + footballteams->numplayers + "','" + footballteams->numplayers + ")", conn);
+
+    String^ strCmd = "dbo.usp_UpdateDT";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@id", System::Data::SqlDbType::Int);
+    comm->Parameters->Add("@docNumber", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@name", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@surname", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@experience", System::Data::SqlDbType::Int);
+
+    comm->Prepare();
+    comm->Parameters["@docNumber"]->Value = dt->DocNumber;
+    comm->Parameters["@name"]->Value = dt->Name;
+    comm->Parameters["@surname"]->Value = dt->Surname;
+    comm->Parameters["@experience"]->Value = dt->Experience;
+
+
+    //Paso 3: Se ejecuta la sentencia
+    int res = comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados (No aplica)
+
+    //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+
+    return res;
+
+    */
 }
 int FootballController::Controller::DeleteDt(int DtId)
 {
@@ -137,6 +471,23 @@ int FootballController::Controller::DeleteDt(int DtId)
             return 1;
         }
     return 0;
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+    SqlCommand^ comm = gcnew SqlCommand("UPDATE DT" + "" + "WHERE id = " + DtId, conn);
+
+    //Paso 3: Se ejecuta la sentencia
+    int res = comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados (No aplica)
+
+  //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+    return res;
+    */
 }
 List<DT^>^ FootballController::Controller::QueryAllDt()
 {
@@ -146,6 +497,38 @@ List<DT^>^ FootballController::Controller::QueryAllDt()
         activeDtList->Add(DtList[i]);
     }
     return activeDtList;
+
+    /*
+
+    //  List<DT^>^ activeDtList = gcnew List <DT^>();
+
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+    SqlCommand^ comm = gcnew SqlCommand("usp_QueryAllDT", conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    SqlDataReader^ reader = comm->ExecuteReader();
+
+    List<DT^>^ activeDtList = gcnew List <DT^>();
+    //Paso 3: Se ejecuta la sentencia
+    while (reader->Read()) {
+        DT^ p = gcnew DT();
+        p->Id = Convert::ToInt32(reader["id"]->ToString());
+        p->DocNumber = reader["docnumber"]->ToString();
+        p->Name = reader["name"]->ToString();
+        p->Surname = reader["surname"]->ToString();
+        p->Experience = Convert::ToInt32(reader["experience"]->ToString());
+
+        activeDtList->Add(p);
+    }
+
+    //Paso 4: Se cierran los obtejos de conexión
+    if (reader != nullptr) reader->Close();
+    if (conn != nullptr) conn->Close();
+    return activeDtList;
+    */
+
 }
 DT^ FootballController::Controller::QueryDtById(int DtId)
 {
@@ -154,20 +537,54 @@ DT^ FootballController::Controller::QueryDtById(int DtId)
             return DtList[i];
         }
     return nullptr;
+
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+    SqlCommand^ comm;
+    comm = gcnew SqlCommand("usp_QueryDTtById", conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@vid", System::Data::SqlDbType::VarChar, 6);
+    comm->Prepare();
+    comm->Parameters["@vid"]->Value = DtId;
+
+    //Paso 3: Se recorre los registros retornados
+    SqlDataReader^ reader = comm->ExecuteReader();
+
+    // 4to paso: Se procesan los resultados
+    DT^ p;
+    if (reader->Read()) {
+        p = gcnew DT();
+        p->Id = Convert::ToInt32(reader["id"]->ToString());
+        p->DocNumber = reader["docnumber"]->ToString();
+        p->Name = reader["name"]->ToString();
+        p->Surname = reader["surname"]->ToString();
+        p->Experience = Convert::ToInt32(reader["experience"]->ToString());
+    }
+
+    //Paso 5 (CRÍTICO): Cerrar la conexión.
+    if (reader != nullptr) reader->Close();
+    if (conn != nullptr) conn->Close();
+    return p;
+    */
+
 }
 //----------------------------------------------------------------------------------------------------------------------------------------
 
 // Método del Login
 Organizer^ FootballController::Controller::Login(String^ username, String^ password)
 {
-
-
     Organizer^ Admin;
-    LoadOrganizerData();
-    for (int i = 0; i < OrganizerList->Count; i++) {
-        if (username == OrganizerList[i]->Username &&
-            password == OrganizerList[i]->Password) {
-            Admin = OrganizerList[i];
+    //LoadOrganizerData();
+    List <Organizer^>^ OrganizerList2 = QueryAllOrganizer();
+
+    for (int i = 0; i < OrganizerList2->Count; i++) {
+        if (username == OrganizerList2[i]->Username &&
+            password == OrganizerList2[i]->Password) {
+            Admin = OrganizerList2[i];
             return Admin;
         }
     }
@@ -181,6 +598,48 @@ int FootballController::Controller::AddFootballteams(Footballteams^ footballteam
     footballteamsList->Add(footballteams);
     PersistFootballteams();
     return 1;
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+   // SqlCommand^ comm = gcnew SqlCommand("INSERT INTO PRODUCT_JOSHUA"+"VALUES('"+ footballteams->NameTeam
+   //                                     + "','" + footballteams->numplayers + "','" + footballteams->numplayers + ")", conn);
+
+    String^ strCmd = "dbo.usp_AddProduct";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@NameTeam", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@DT", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@Tournament", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@numplayers", System::Data::SqlDbType::Int);
+    comm->Parameters->Add("@photo", System::Data::SqlDbType::Image);
+
+    SqlParameter^ outputIdParam = gcnew SqlParameter("@id", System::Data::SqlDbType::Int);
+    outputIdParam->Direction = System::Data::ParameterDirection::Output;
+    comm->Parameters->Add(outputIdParam);
+    comm->Prepare();
+    comm->Parameters["@NameTeam"]->Value = footballteams->NameTeam;
+    comm->Parameters["@DT"]->Value = footballteams->DT;
+    comm->Parameters["@Tournament"]->Value = footballteams->Tournament;
+    comm->Parameters["@numplayers"]->Value = footballteams->numplayers;
+    if (footballteams->Photo == nullptr)
+        comm->Parameters["@photo"]->Value = DBNull::Value;
+    else
+        comm->Parameters["@photo"]->Value = footballteams->Photo;
+
+    //Paso 3: Se ejecuta la sentencia
+    comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados
+    int output_id = Convert::ToInt32(comm->Parameters["@id"]->Value);
+
+    //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+
+    return output_id;
+    */
 }
 int FootballController::Controller::UpdateFootballteams(Footballteams^ footballteams)
 {
@@ -191,6 +650,47 @@ int FootballController::Controller::UpdateFootballteams(Footballteams^ footballt
             return 1;
         }
     return 0;
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+   // SqlCommand^ comm = gcnew SqlCommand("INSERT INTO PRODUCT_JOSHUA"+"VALUES('"+ footballteams->NameTeam
+    //                                    + "','" + footballteams->numplayers + "','" + footballteams->numplayers + ")", conn);
+
+    String^ strCmd = "dbo.usp_UpdateProduct";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@id", System::Data::SqlDbType::Int);
+    comm->Parameters->Add("@NameTeam", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@DT", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@Tournament", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@numplayers", System::Data::SqlDbType::Int);
+    comm->Parameters->Add("@photo", System::Data::SqlDbType::Image);
+
+    comm->Prepare();
+    comm->Parameters["@NameTeam"]->Value = footballteams->NameTeam;
+    comm->Parameters["@DT"]->Value = footballteams->DT;
+    comm->Parameters["@Tournament"]->Value = footballteams->Tournament;
+    comm->Parameters["@numplayers"]->Value = footballteams->numplayers;
+    if (footballteams->Photo == nullptr)
+        comm->Parameters["@photo"]->Value = DBNull::Value;
+    else
+        comm->Parameters["@photo"]->Value = footballteams->Photo;
+
+    //Paso 3: Se ejecuta la sentencia
+    int res = comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados (No aplica)
+
+    //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+
+    return res;
+
+    */
 }
 int FootballController::Controller::DeleteFootballteams(int footballteamsId)
 {
@@ -201,6 +701,23 @@ int FootballController::Controller::DeleteFootballteams(int footballteamsId)
             return 1;
         }
     return 0;
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+    SqlCommand^ comm = gcnew SqlCommand("UPDATE PRODUCT_JOSHUA" + "" + "WHERE id = " + footballteamsId, conn);
+
+    //Paso 3: Se ejecuta la sentencia
+    int res = comm->ExecuteNonQuery();
+
+      //Paso 4: Se procesan los resultados (No aplica)
+
+    //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+    return res;
+    */
 }
 List<Footballteams^>^ FootballController::Controller::QueryAllFootballteams()
 {
@@ -210,6 +727,47 @@ List<Footballteams^>^ FootballController::Controller::QueryAllFootballteams()
         activeFootballteamsList->Add(footballteamsList[i]);
     }
     return activeFootballteamsList;
+    /*
+    List<Footballteams^>^ activeFootballteamsList = gcnew List<Footballteams^>();
+
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+  //  SqlCommand^ comm = gcnew SqlCommand("SELECT * FROM PRODUCT_JOSHUA"
+ //               + "WHERE NameTeam LIKE '%" + value + "%'", conn);
+
+    String^ strCmd = "dbo.usp_QueryProductByNameTeam";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@value", System::Data::SqlDbType::VarChar, 250);
+    comm->Prepare();
+    comm->Parameters["@value"]->Value = DBNull::Value;
+    //Paso 3: Se ejecuta la sentencia
+    SqlDataReader^ reader = comm->ExecuteReader();
+
+    //Paso 4: Se procesan los resultados
+    Footballteams^ p;
+    while (reader->Read()) {
+        p = gcnew Footballteams();
+        p->Id = Convert::ToInt32(reader["id"]->ToString());
+        p->NameTeam = reader["NameTeam"]->ToString();
+        p->numplayers = Convert::ToInt32(reader["numplayers"]->ToString());
+        //  p->Tournament = reader["Tournament"]->ToString();
+        //  p->DT = reader["DT"]->ToString();
+        if (!DBNull::Value->Equals(reader["photo"]))
+            p->Photo = (array<Byte>^)reader["photo"];
+
+        activeFootballteamsList->Add(p);
+    }
+
+    //Paso 5: Se cierran los obtejos de conexión
+    reader->Close();
+    conn->Close();
+
+    return activeFootballteamsList;
+    */
 }
 Footballteams^ FootballController::Controller::QueryFootballteamsById(int footballteamsId)
 {
@@ -218,6 +776,35 @@ Footballteams^ FootballController::Controller::QueryFootballteamsById(int footba
             return footballteamsList[i];
         }
     return nullptr;
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+    SqlCommand^ comm = gcnew SqlCommand("SELECT * FROM PRODUCT_JOSHUA AND id=" + footballteamsId, conn);
+
+    //Paso 3: Se ejecuta la sentencia
+    SqlDataReader^ reader = comm->ExecuteReader();
+
+    //Paso 4: Se procesan los resultados
+    Footballteams^ p;
+    if (reader->Read()) {
+        p = gcnew Footballteams();
+        p->Id = Convert::ToInt32(reader["id"]->ToString());
+        p->NameTeam = reader["NameTeam"]->ToString();
+        p->numplayers = Convert::ToInt32(reader["numplayers"]->ToString());
+        //  p->Tournament = reader["Tournament"]->ToString();
+        //  p->DT = reader["DT"]->ToString();
+        if (!DBNull::Value->Equals(reader["photo"]))
+            p->Photo = (array<Byte>^)reader["photo"];
+    }
+
+    //Paso 5: Se cierran los obtejos de conexión
+    reader->Close();
+    conn->Close();
+    return p;
+    */
 }
 //----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -227,6 +814,44 @@ int FootballController::Controller::AddPlayer(Player^ player)
     playerList->Add(player);
     PersistProducts();
     return 1;
+
+    /*
+     //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+   // SqlCommand^ comm = gcnew SqlCommand("INSERT INTO PRODUCT_JOSHUA"+"VALUES('"+ footballteams->NameTeam
+   //                                     + "','" + footballteams->numplayers + "','" + footballteams->numplayers + ")", conn);
+
+    String^ strCmd = "dbo.usp_AddPlayer";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@number", System::Data::SqlDbType::Int);
+    comm->Parameters->Add("@name", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@surname", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@footballTeams", System::Data::SqlDbType::VarChar, 250);
+
+    SqlParameter^ outputIdParam = gcnew SqlParameter("@id", System::Data::SqlDbType::Int);
+    outputIdParam->Direction = System::Data::ParameterDirection::Output;
+    comm->Parameters->Add(outputIdParam);
+    comm->Prepare();
+    comm->Parameters["@number"]->Value = player->Number;
+    comm->Parameters["@name"]->Value = player->Name;
+    comm->Parameters["@surname"]->Value = player->Surname;
+    comm->Parameters["@footballTeams"]->Value = player->footballteams;
+
+    //Paso 3: Se ejecuta la sentencia
+    comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados
+    int output_id = Convert::ToInt32(comm->Parameters["@id"]->Value);
+
+    //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+
+    return output_id;
+    */
 }
 int FootballController::Controller::UpdatePlayer(Player^ player)
 {
@@ -237,6 +862,42 @@ int FootballController::Controller::UpdatePlayer(Player^ player)
             return 1;
         }
     return 0;
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+  //  SqlCommand^ comm = gcnew SqlCommand("INSERT INTO PRODUCT_JOSHUA"+"VALUES('"+ footballteams->NameTeam
+  //                                      + "','" + footballteams->numplayers + "','" + footballteams->numplayers + ")", conn);
+
+    String^ strCmd = "dbo.usp_UpdatePlayer";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@id", System::Data::SqlDbType::Int);
+    comm->Parameters->Add("@number", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@name", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@surname", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@footballTeams", System::Data::SqlDbType::VarChar, 250);
+
+    comm->Prepare();
+    comm->Parameters["@number"]->Value = player->Number;
+    comm->Parameters["@name"]->Value = player->Name;
+    comm->Parameters["@surname"]->Value = player->Surname;
+    comm->Parameters["@footballTeams"]->Value = player->footballteams;
+
+
+    //Paso 3: Se ejecuta la sentencia
+    int res = comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados (No aplica)
+
+    //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+
+    return res;
+    */
 }
 int FootballController::Controller::DeletePlayer(int playerId)
 {
@@ -247,6 +908,23 @@ int FootballController::Controller::DeletePlayer(int playerId)
             return 1;
         }
     return 0;
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+    SqlCommand^ comm = gcnew SqlCommand("UPDATE PLAYER" + "" + "WHERE id = " + playerId, conn);
+
+    //Paso 3: Se ejecuta la sentencia
+    int res = comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados (No aplica)
+
+  //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+    return res;
+    */
 }
 List<Player^>^ FootballController::Controller::QueryAllPlayers()
 {
@@ -256,6 +934,46 @@ List<Player^>^ FootballController::Controller::QueryAllPlayers()
         activePlayersList->Add(playerList[i]);
     }
     return activePlayersList;
+
+    /*
+    List<Player^>^ activePlayersList = gcnew List <Player^>();
+
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+  //  SqlCommand^ comm = gcnew SqlCommand("SELECT * FROM PRODUCT_JOSHUA"
+    //            + "WHERE NameTeam LIKE '%" + value + "%'", conn);
+
+    String^ strCmd = "dbo.usp_QueryPlayerByNumber";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@value", System::Data::SqlDbType::VarChar, 250);
+    comm->Prepare();
+    comm->Parameters["@value"]->Value = DBNull::Value;
+    //Paso 3: Se ejecuta la sentencia
+    SqlDataReader^ reader = comm->ExecuteReader();
+
+    //Paso 4: Se procesan los resultados
+    Player^ p;
+    while (reader->Read()) {
+        p = gcnew Player();
+        p->Id = Convert::ToInt32(reader["id"]->ToString());
+        p->Number = Convert::ToInt32(reader["number"]->ToString());
+        p->Name = reader["name"]->ToString();
+        p->Surname = reader["surname"]->ToString();
+        // p->footballteams = reader["footballTeams"]->ToString();
+
+        activePlayersList->Add(p);
+    }
+
+    //Paso 5: Se cierran los obtejos de conexión
+    reader->Close();
+    conn->Close();
+
+    return activePlayersList;
+    */
 }
 Player^ FootballController::Controller::QueryPlayerById(int playerId)
 {
@@ -264,6 +982,33 @@ Player^ FootballController::Controller::QueryPlayerById(int playerId)
             return playerList[i];
         }
     return nullptr;
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+    SqlCommand^ comm = gcnew SqlCommand("SELECT * FROM PLAYER AND id=" + playerId, conn);
+
+    //Paso 3: Se ejecuta la sentencia
+    SqlDataReader^ reader = comm->ExecuteReader();
+
+    //Paso 4: Se procesan los resultados
+    Player^ p;
+    if (reader->Read()) {
+        p = gcnew Player();
+        p->Id = Convert::ToInt32(reader["id"]->ToString());
+        p->Number = Convert::ToInt32(reader["number"]->ToString());
+        p->Name = reader["name"]->ToString();
+        p->Surname = reader["surname"]->ToString();
+        // p->footballteams = reader["footballTeams"]->ToString();
+    }
+
+    //Paso 5: Se cierran los obtejos de conexión
+    reader->Close();
+    conn->Close();
+    return p;
+    */
 }
 List<String^>^ FootballController::Controller::QueryAllPositions()
 {
@@ -291,6 +1036,44 @@ int FootballController::Controller::AddReferee(Referee^ referee)
     refereeList->Add(referee);
     PersistReferees();
     return 1;
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+  //  SqlCommand^ comm = gcnew SqlCommand("INSERT INTO PRODUCT_JOSHUA"+"VALUES('"+ footballteams->NameTeam
+  //                                      + "','" + footballteams->numplayers + "','" + footballteams->numplayers + ")", conn);
+
+    String^ strCmd = "dbo.usp_AddReferee";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@docNumber", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@name", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@surname", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@tournament", System::Data::SqlDbType::VarChar, 250);
+
+    SqlParameter^ outputIdParam = gcnew SqlParameter("@id", System::Data::SqlDbType::Int);
+    outputIdParam->Direction = System::Data::ParameterDirection::Output;
+    comm->Parameters->Add(outputIdParam);
+    comm->Prepare();
+    comm->Parameters["@docNumber"]->Value = referee->DocNumber;
+    comm->Parameters["@name"]->Value = referee->Name;
+    comm->Parameters["@surname"]->Value = referee->Surname;
+    comm->Parameters["@tournament"]->Value = referee->tournament;
+
+    //Paso 3: Se ejecuta la sentencia
+    comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados
+    int output_id = Convert::ToInt32(comm->Parameters["@id"]->Value);
+
+    //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+
+    return output_id;
+    */
 }
 int FootballController::Controller::UpdateReferee(Referee^ referee)
 {
@@ -302,6 +1085,42 @@ int FootballController::Controller::UpdateReferee(Referee^ referee)
             return 1;
         }
     return 0;
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+   // SqlCommand^ comm = gcnew SqlCommand("INSERT INTO PRODUCT_JOSHUA"+"VALUES('"+ footballteams->NameTeam
+    //                                    + "','" + footballteams->numplayers + "','" + footballteams->numplayers + ")", conn);
+
+    String^ strCmd = "dbo.usp_UpdateREFEREE";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@id", System::Data::SqlDbType::Int);
+    comm->Parameters->Add("@docNumber", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@name", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@surname", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@tournament", System::Data::SqlDbType::VarChar, 250);
+
+    comm->Prepare();
+    comm->Parameters["@docNumber"]->Value = referee->DocNumber;
+    comm->Parameters["@name"]->Value = referee->Name;
+    comm->Parameters["@surname"]->Value = referee->Surname;
+    comm->Parameters["@tournament"]->Value = referee->tournament;
+
+
+    //Paso 3: Se ejecuta la sentencia
+    int res = comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados (No aplica)
+
+    //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+
+    return res;
+    */
 }
 int FootballController::Controller::DeleteReferee(int refereeId)
 {
@@ -312,15 +1131,71 @@ int FootballController::Controller::DeleteReferee(int refereeId)
             return 1;
         }
     return 0;
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+    SqlCommand^ comm = gcnew SqlCommand("UPDATE REFEREE" + "" + "WHERE id = " + refereeId, conn);
+
+    //Paso 3: Se ejecuta la sentencia
+    int res = comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados (No aplica)
+
+  //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+    return res;
+    */
 }
 List<Referee^>^ FootballController::Controller::QueryAllReferees()
 {
-  LoadRefereesData();
+    LoadRefereesData();
     List<Referee^>^ activeRefereeList = gcnew List<Referee^>();
     for (int i = 0; i < refereeList->Count; i++) {
         activeRefereeList->Add(refereeList[i]);
     }
     return activeRefereeList;
+
+    /*
+    List<Referee^>^ activeRefereeList = gcnew List<Referee^>();
+
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+   // SqlCommand^ comm = gcnew SqlCommand("SELECT * FROM PRODUCT_JOSHUA"
+    //            + "WHERE NameTeam LIKE '%" + value + "%'", conn);
+
+    String^ strCmd = "dbo.usp_QueryDTByDocNumberReferee";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@value", System::Data::SqlDbType::VarChar, 250);
+    comm->Prepare();
+    comm->Parameters["@value"]->Value = DBNull::Value;
+    //Paso 3: Se ejecuta la sentencia
+    SqlDataReader^ reader = comm->ExecuteReader();
+
+    //Paso 4: Se procesan los resultados
+    Referee^ p;
+    while (reader->Read()) {
+        p = gcnew Referee();
+        p->Id = Convert::ToInt32(reader["id"]->ToString());
+        p->DocNumber = reader["docnumber"]->ToString();
+        p->Name = reader["name"]->ToString();
+        p->Surname = reader["surname"]->ToString();
+        //p->tournament = reader["tournament"]->ToString();
+
+        activeRefereeList->Add(p);
+    }
+
+    //Paso 5: Se cierran los obtejos de conexión
+    reader->Close();
+    conn->Close();
+
+    return activeRefereeList;
+    */
 }
 List<Referee^>^ FootballController::Controller::QueryRefereesByName(String^ value)
 {
@@ -328,7 +1203,7 @@ List<Referee^>^ FootballController::Controller::QueryRefereesByName(String^ valu
     List<Referee^>^ newRefereeList = gcnew List<Referee^>();
     for (int i = 0; i < refereeList->Count; i++) {
         if (refereeList[i]->Name->Contains(value) ||
-           refereeList[i]->Surname->Contains(value))
+            refereeList[i]->Surname->Contains(value))
             newRefereeList->Add(refereeList[i]);
     }
     return newRefereeList;
@@ -341,6 +1216,32 @@ Referee^ FootballController::Controller::QueryRefereeById(int refereeId)
             return refereeList[i];
         }
     return nullptr;
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+    SqlCommand^ comm = gcnew SqlCommand("SELECT * FROM REFEREE AND id=" + refereeId, conn);
+
+    //Paso 3: Se ejecuta la sentencia
+    SqlDataReader^ reader = comm->ExecuteReader();
+
+    //Paso 4: Se procesan los resultados
+    Referee^ p;
+    if (reader->Read()) {
+        p = gcnew Referee();
+        p->Id = Convert::ToInt32(reader["id"]->ToString());
+        p->DocNumber = reader["docnumber"]->ToString();
+        p->Name = reader["name"]->ToString();
+        p->Surname = reader["surname"]->ToString();
+        //p->tournament = reader["tournament"]->ToString();
+    }
+
+    //Paso 5: Se cierran los obtejos de conexión
+    reader->Close();
+    conn->Close();
+    return p;
+    */
 }
 List<String^>^ FootballController::Controller::QueryAllPositionsReferee()
 {
@@ -355,16 +1256,85 @@ int FootballController::Controller::AddStadium(Stadium^ stadium)
     stadiumList->Add(stadium);
     PersisStadiums();
     return 1;
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+   // SqlCommand^ comm = gcnew SqlCommand("INSERT INTO PRODUCT_JOSHUA"+"VALUES('"+ footballteams->NameTeam
+   //                                     + "','" + footballteams->numplayers + "','" + footballteams->numplayers + ")", conn);
+
+    String^ strCmd = "dbo.usp_AddStadium";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@name", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@place", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@direction", System::Data::SqlDbType::VarChar, 250);
+
+    SqlParameter^ outputIdParam = gcnew SqlParameter("@id", System::Data::SqlDbType::Int);
+    outputIdParam->Direction = System::Data::ParameterDirection::Output;
+    comm->Parameters->Add(outputIdParam);
+    comm->Prepare();
+    comm->Parameters["@name"]->Value = stadium->Name;
+    comm->Parameters["@place"]->Value = stadium->Place;
+    comm->Parameters["@direction"]->Value = stadium->Direction;
+
+    //Paso 3: Se ejecuta la sentencia
+    comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados
+    int output_id = Convert::ToInt32(comm->Parameters["@id"]->Value);
+
+    //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+
+    return output_id;
+    */
 }
 int FootballController::Controller::UpdateStadium(Stadium^ stadium)
 {
     for (int i = 0; i < stadiumList->Count; i++)
-        if (stadium->Id ==  stadiumList[i]->Id) {
+        if (stadium->Id == stadiumList[i]->Id) {
             stadiumList[i] = stadium;
             PersisStadiums();
             return 1;
         }
     return 0;
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+   // SqlCommand^ comm = gcnew SqlCommand("INSERT INTO PRODUCT_JOSHUA"+"VALUES('"+ footballteams->NameTeam
+    //                                    + "','" + footballteams->numplayers + "','" + footballteams->numplayers + ")", conn);
+
+    String^ strCmd = "dbo.usp_UpdateSTADIUM";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@id", System::Data::SqlDbType::Int);
+    comm->Parameters->Add("@name", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@place", System::Data::SqlDbType::VarChar, 250);
+    comm->Parameters->Add("@direction", System::Data::SqlDbType::VarChar, 250);
+
+    comm->Prepare();
+    comm->Parameters["@name"]->Value = stadium->Name;
+    comm->Parameters["@place"]->Value = stadium->Place;
+    comm->Parameters["@direction"]->Value = stadium->Direction;
+
+
+    //Paso 3: Se ejecuta la sentencia
+    int res = comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados (No aplica)
+
+    //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+
+    return res;
+    */
 }
 int FootballController::Controller::DeleteStadium(int stadiumId)
 {
@@ -375,6 +1345,22 @@ int FootballController::Controller::DeleteStadium(int stadiumId)
             return 1;
         }
     return 0;
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+    SqlCommand^ comm = gcnew SqlCommand("UPDATE STADIUM" + "" + "WHERE id = " + stadiumId, conn);
+
+    //Paso 3: Se ejecuta la sentencia
+    int res = comm->ExecuteNonQuery();
+
+    //Paso 4: Se procesan los resultados (No aplica)
+
+  //Paso 5: Se cierran los obtejos de conexión
+    conn->Close();
+    return res;
+    */
 }
 List<Stadium^>^ FootballController::Controller::QueryAllStadium()
 {
@@ -384,6 +1370,45 @@ List<Stadium^>^ FootballController::Controller::QueryAllStadium()
         activeStadiumList->Add(stadiumList[i]);
     }
     return activeStadiumList;
+
+    /*
+    List<Stadium^>^ activeStadiumList = gcnew List<Stadium^>();
+
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+
+   // SqlCommand^ comm = gcnew SqlCommand("SELECT * FROM PRODUCT_JOSHUA"
+    //            + "WHERE NameTeam LIKE '%" + value + "%'", conn);
+
+    String^ strCmd = "dbo.usp_QueryDTByNameStadium";
+    SqlCommand^ comm = gcnew SqlCommand(strCmd, conn);
+    comm->CommandType = System::Data::CommandType::StoredProcedure;
+    comm->Parameters->Add("@value", System::Data::SqlDbType::VarChar, 250);
+    comm->Prepare();
+    comm->Parameters["@value"]->Value = DBNull::Value;
+    //Paso 3: Se ejecuta la sentencia
+    SqlDataReader^ reader = comm->ExecuteReader();
+
+    //Paso 4: Se procesan los resultados
+    Stadium^ p;
+    while (reader->Read()) {
+        p = gcnew Stadium();
+        p->Id = Convert::ToInt32(reader["id"]->ToString());
+        p->Name = reader["name"]->ToString();
+        p->Place = reader["place"]->ToString();
+        p->Direction = reader["direction"]->ToString();
+
+        activeStadiumList->Add(p);
+    }
+
+    //Paso 5: Se cierran los obtejos de conexión
+    reader->Close();
+    conn->Close();
+
+    return activeStadiumList;
+    */
 }
 Stadium^ FootballController::Controller::QueryStadiumById(int stadiumId)
 {
@@ -392,6 +1417,32 @@ Stadium^ FootballController::Controller::QueryStadiumById(int stadiumId)
             return stadiumList[i];
         }
     return nullptr;
+
+    /*
+    //Paso 1: se obtiene la conexion
+    SqlConnection^ conn = GetConnection();
+
+    //Paso 2: Se prepara la sentencia
+    SqlCommand^ comm = gcnew SqlCommand("SELECT * FROM STADIUM AND id=" + stadiumId, conn);
+
+    //Paso 3: Se ejecuta la sentencia
+    SqlDataReader^ reader = comm->ExecuteReader();
+
+    //Paso 4: Se procesan los resultados
+    Stadium^ p;
+    if (reader->Read()) {
+        p = gcnew Stadium();
+        p->Id = Convert::ToInt32(reader["id"]->ToString());
+        p->Name = reader["name"]->ToString();
+        p->Place = reader["place"]->ToString();
+        p->Direction = reader["direction"]->ToString();
+    }
+
+    //Paso 5: Se cierran los obtejos de conexión
+    reader->Close();
+    conn->Close();
+    return p;
+    */
 }
 
 // Métodos Match
@@ -420,8 +1471,8 @@ int FootballController::Controller::DeleteMatch(match^ Match)
             PersisMatch();
             a = 1;
         }
-        if (a == 1 && i < matchList->Count) {
-            matchList[i]->date = matchList[i]->date-1;
+        if (a == 1) {
+            matchList[i]->date = matchList[i]->date - 1;
         }
     }
     PersisMatch();
@@ -568,7 +1619,7 @@ void FootballController::Controller::LoadOrganizerData()
     }
     catch (Exception^ ex) {
     }
-    finally { 
+    finally {
         if (sr != nullptr) sr->Close();
     }
 }
@@ -651,6 +1702,15 @@ void FootballController::Controller::LoadTournamentsData()
     finally {
         if (sr != nullptr) sr->Close();
     }
+}
+
+SqlConnection^ FootballController::Controller::GetConnection()
+{
+    SqlConnection^ conn = gcnew SqlConnection();
+    String^ connStr = "Server=200.16.7.140;Database=a20172392;User ID=a20172392;Password=kHg8wVXF";
+    conn->ConnectionString = connStr;
+    conn->Open();
+    return conn;
 }
 
 //Match

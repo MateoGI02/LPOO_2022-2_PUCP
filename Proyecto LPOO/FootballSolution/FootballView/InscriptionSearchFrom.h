@@ -69,6 +69,7 @@ namespace FootballView {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(InscriptionSearchFrom::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->txtDocNumber = (gcnew System::Windows::Forms::TextBox());
@@ -85,24 +86,30 @@ namespace FootballView {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label1->Location = System::Drawing::Point(58, 23);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(30, 16);
+			this->label1->Size = System::Drawing::Size(33, 16);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"DNI";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label2->Location = System::Drawing::Point(12, 68);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(124, 16);
+			this->label2->Size = System::Drawing::Size(141, 16);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Nombres/Apellidos";
 			// 
 			// txtDocNumber
 			// 
-			this->txtDocNumber->Location = System::Drawing::Point(143, 23);
+			this->txtDocNumber->Location = System::Drawing::Point(166, 20);
 			this->txtDocNumber->Margin = System::Windows::Forms::Padding(4);
 			this->txtDocNumber->Name = L"txtDocNumber";
 			this->txtDocNumber->Size = System::Drawing::Size(132, 22);
@@ -110,7 +117,7 @@ namespace FootballView {
 			// 
 			// txtNameDescription
 			// 
-			this->txtNameDescription->Location = System::Drawing::Point(143, 65);
+			this->txtNameDescription->Location = System::Drawing::Point(166, 65);
 			this->txtNameDescription->Margin = System::Windows::Forms::Padding(4);
 			this->txtNameDescription->Name = L"txtNameDescription";
 			this->txtNameDescription->Size = System::Drawing::Size(340, 22);
@@ -154,29 +161,34 @@ namespace FootballView {
 			// 
 			// btnCancelSearch
 			// 
+			this->btnCancelSearch->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->btnCancelSearch->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->btnCancelSearch->Location = System::Drawing::Point(310, 98);
 			this->btnCancelSearch->Margin = System::Windows::Forms::Padding(4);
 			this->btnCancelSearch->Name = L"btnCancelSearch";
 			this->btnCancelSearch->Size = System::Drawing::Size(128, 28);
 			this->btnCancelSearch->TabIndex = 8;
 			this->btnCancelSearch->Text = L"Cancelar";
-			this->btnCancelSearch->UseVisualStyleBackColor = true;
+			this->btnCancelSearch->UseVisualStyleBackColor = false;
 			// 
 			// btnSearch
 			// 
+			this->btnSearch->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->btnSearch->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->btnSearch->Location = System::Drawing::Point(121, 98);
 			this->btnSearch->Margin = System::Windows::Forms::Padding(4);
 			this->btnSearch->Name = L"btnSearch";
 			this->btnSearch->Size = System::Drawing::Size(129, 28);
 			this->btnSearch->TabIndex = 7;
 			this->btnSearch->Text = L"Buscar";
-			this->btnSearch->UseVisualStyleBackColor = true;
+			this->btnSearch->UseVisualStyleBackColor = false;
 			this->btnSearch->Click += gcnew System::EventHandler(this, &InscriptionSearchFrom::btnSearch_Click);
 			// 
 			// InscriptionSearchFrom
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::DarkSeaGreen;
 			this->ClientSize = System::Drawing::Size(590, 347);
 			this->Controls->Add(this->dgvSearch);
 			this->Controls->Add(this->btnCancelSearch);
@@ -185,8 +197,9 @@ namespace FootballView {
 			this->Controls->Add(this->txtDocNumber);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"InscriptionSearchFrom";
-			this->Text = L"InscriptionSearchFrom";
+			this->Text = L"Busquedad de inscripciones";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvSearch))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();

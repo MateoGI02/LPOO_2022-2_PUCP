@@ -116,6 +116,7 @@ namespace FootballView {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(TeamsForm::typeid));
 			this->txtTeam = (gcnew System::Windows::Forms::TextBox());
 			this->cbmTeamsTour = (gcnew System::Windows::Forms::ComboBox());
 			this->pbphototeam = (gcnew System::Windows::Forms::PictureBox());
@@ -148,63 +149,69 @@ namespace FootballView {
 			// 
 			// txtTeam
 			// 
-			this->txtTeam->Location = System::Drawing::Point(100, 68);
-			this->txtTeam->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->txtTeam->Location = System::Drawing::Point(133, 84);
+			this->txtTeam->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->txtTeam->Name = L"txtTeam";
-			this->txtTeam->Size = System::Drawing::Size(164, 20);
+			this->txtTeam->Size = System::Drawing::Size(217, 22);
 			this->txtTeam->TabIndex = 10;
 			// 
 			// cbmTeamsTour
 			// 
 			this->cbmTeamsTour->FormattingEnabled = true;
-			this->cbmTeamsTour->Location = System::Drawing::Point(100, 136);
-			this->cbmTeamsTour->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->cbmTeamsTour->Location = System::Drawing::Point(133, 167);
+			this->cbmTeamsTour->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->cbmTeamsTour->Name = L"cbmTeamsTour";
-			this->cbmTeamsTour->Size = System::Drawing::Size(145, 21);
+			this->cbmTeamsTour->Size = System::Drawing::Size(192, 24);
 			this->cbmTeamsTour->TabIndex = 16;
 			// 
 			// pbphototeam
 			// 
 			this->pbphototeam->BackColor = System::Drawing::SystemColors::ControlLight;
 			this->pbphototeam->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->pbphototeam->Location = System::Drawing::Point(392, 46);
-			this->pbphototeam->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->pbphototeam->Location = System::Drawing::Point(523, 57);
+			this->pbphototeam->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->pbphototeam->Name = L"pbphototeam";
-			this->pbphototeam->Size = System::Drawing::Size(231, 154);
+			this->pbphototeam->Size = System::Drawing::Size(307, 189);
 			this->pbphototeam->TabIndex = 19;
 			this->pbphototeam->TabStop = false;
 			// 
 			// btnDeleteTeam
 			// 
-			this->btnDeleteTeam->Location = System::Drawing::Point(292, 224);
-			this->btnDeleteTeam->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->btnDeleteTeam->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->btnDeleteTeam->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btnDeleteTeam->Location = System::Drawing::Point(389, 260);
+			this->btnDeleteTeam->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btnDeleteTeam->Name = L"btnDeleteTeam";
-			this->btnDeleteTeam->Size = System::Drawing::Size(103, 19);
+			this->btnDeleteTeam->Size = System::Drawing::Size(148, 40);
 			this->btnDeleteTeam->TabIndex = 26;
 			this->btnDeleteTeam->Text = L"ELIMINAR";
-			this->btnDeleteTeam->UseVisualStyleBackColor = true;
+			this->btnDeleteTeam->UseVisualStyleBackColor = false;
 			this->btnDeleteTeam->Click += gcnew System::EventHandler(this, &TeamsForm::btnDeleteTeam_Click);
 			// 
 			// btnUpdateTeam
 			// 
-			this->btnUpdateTeam->Location = System::Drawing::Point(160, 224);
-			this->btnUpdateTeam->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->btnUpdateTeam->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->btnUpdateTeam->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btnUpdateTeam->Location = System::Drawing::Point(213, 260);
+			this->btnUpdateTeam->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btnUpdateTeam->Name = L"btnUpdateTeam";
-			this->btnUpdateTeam->Size = System::Drawing::Size(103, 19);
+			this->btnUpdateTeam->Size = System::Drawing::Size(137, 40);
 			this->btnUpdateTeam->TabIndex = 25;
 			this->btnUpdateTeam->Text = L"MODIFICAR";
-			this->btnUpdateTeam->UseVisualStyleBackColor = true;
+			this->btnUpdateTeam->UseVisualStyleBackColor = false;
 			this->btnUpdateTeam->Click += gcnew System::EventHandler(this, &TeamsForm::btnUpdateTeam_Click);
 			// 
 			// btnAddTeam
 			// 
-			this->btnAddTeam->Location = System::Drawing::Point(29, 224);
-			this->btnAddTeam->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->btnAddTeam->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->btnAddTeam->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btnAddTeam->Location = System::Drawing::Point(39, 260);
+			this->btnAddTeam->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btnAddTeam->Name = L"btnAddTeam";
-			this->btnAddTeam->Size = System::Drawing::Size(103, 19);
+			this->btnAddTeam->Size = System::Drawing::Size(143, 40);
 			this->btnAddTeam->TabIndex = 24;
 			this->btnAddTeam->Text = L"AGREGAR";
-			this->btnAddTeam->UseVisualStyleBackColor = true;
+			this->btnAddTeam->UseVisualStyleBackColor = false;
 			this->btnAddTeam->Click += gcnew System::EventHandler(this, &TeamsForm::btnAddTeam_Click);
 			// 
 			// dgvTeams
@@ -214,12 +221,12 @@ namespace FootballView {
 				this->teamId, this->team,
 					this->nameDT, this->surnameDT, this->teamTournament
 			});
-			this->dgvTeams->Location = System::Drawing::Point(45, 263);
-			this->dgvTeams->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->dgvTeams->Location = System::Drawing::Point(60, 324);
+			this->dgvTeams->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->dgvTeams->Name = L"dgvTeams";
 			this->dgvTeams->RowHeadersWidth = 51;
 			this->dgvTeams->RowTemplate->Height = 24;
-			this->dgvTeams->Size = System::Drawing::Size(563, 200);
+			this->dgvTeams->Size = System::Drawing::Size(751, 246);
 			this->dgvTeams->TabIndex = 29;
 			this->dgvTeams->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &TeamsForm::dgvTeams_CellClick);
 			// 
@@ -261,50 +268,58 @@ namespace FootballView {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(17, 70);
-			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label4->Location = System::Drawing::Point(23, 86);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(40, 13);
+			this->label4->Size = System::Drawing::Size(56, 16);
 			this->label4->TabIndex = 31;
 			this->label4->Text = L"Equipo";
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(17, 139);
-			this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label9->Location = System::Drawing::Point(23, 171);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(72, 13);
+			this->label9->Size = System::Drawing::Size(103, 16);
 			this->label9->TabIndex = 36;
 			this->label9->Text = L"Campeonatos";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(17, 40);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label1->Location = System::Drawing::Point(23, 49);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(16, 13);
+			this->label1->Size = System::Drawing::Size(20, 16);
 			this->label1->TabIndex = 37;
 			this->label1->Text = L"Id";
 			// 
 			// txtTeamId
 			// 
-			this->txtTeamId->Location = System::Drawing::Point(100, 32);
-			this->txtTeamId->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->txtTeamId->Location = System::Drawing::Point(133, 39);
+			this->txtTeamId->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->txtTeamId->Name = L"txtTeamId";
-			this->txtTeamId->Size = System::Drawing::Size(59, 20);
+			this->txtTeamId->Size = System::Drawing::Size(77, 22);
 			this->txtTeamId->TabIndex = 38;
 			// 
 			// btn
 			// 
-			this->btn->Location = System::Drawing::Point(463, 211);
-			this->btn->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->btn->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->btn->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btn->Location = System::Drawing::Point(617, 260);
+			this->btn->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn->Name = L"btn";
-			this->btn->Size = System::Drawing::Size(103, 32);
+			this->btn->Size = System::Drawing::Size(137, 39);
 			this->btn->TabIndex = 39;
 			this->btn->Text = L"Agregar Foto";
-			this->btn->UseVisualStyleBackColor = true;
+			this->btn->UseVisualStyleBackColor = false;
 			// 
 			// menuStrip1
 			// 
@@ -315,79 +330,87 @@ namespace FootballView {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Padding = System::Windows::Forms::Padding(5, 1, 0, 1);
-			this->menuStrip1->Size = System::Drawing::Size(685, 24);
+			this->menuStrip1->Padding = System::Windows::Forms::Padding(7, 1, 0, 1);
+			this->menuStrip1->Size = System::Drawing::Size(913, 26);
 			this->menuStrip1->TabIndex = 40;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// nuevosEquiposToolStripMenuItem1
 			// 
+			this->nuevosEquiposToolStripMenuItem1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"nuevosEquiposToolStripMenuItem1.Image")));
 			this->nuevosEquiposToolStripMenuItem1->Name = L"nuevosEquiposToolStripMenuItem1";
-			this->nuevosEquiposToolStripMenuItem1->Size = System::Drawing::Size(104, 22);
+			this->nuevosEquiposToolStripMenuItem1->Size = System::Drawing::Size(149, 24);
 			this->nuevosEquiposToolStripMenuItem1->Text = L"Nuevos Equipos";
 			this->nuevosEquiposToolStripMenuItem1->Click += gcnew System::EventHandler(this, &TeamsForm::nuevosEquiposToolStripMenuItem1_Click);
 			// 
 			// modificarEquiposToolStripMenuItem1
 			// 
+			this->modificarEquiposToolStripMenuItem1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"modificarEquiposToolStripMenuItem1.Image")));
 			this->modificarEquiposToolStripMenuItem1->Name = L"modificarEquiposToolStripMenuItem1";
-			this->modificarEquiposToolStripMenuItem1->Size = System::Drawing::Size(115, 22);
+			this->modificarEquiposToolStripMenuItem1->Size = System::Drawing::Size(164, 24);
 			this->modificarEquiposToolStripMenuItem1->Text = L"Modificar Equipos";
 			this->modificarEquiposToolStripMenuItem1->Click += gcnew System::EventHandler(this, &TeamsForm::modificarEquiposToolStripMenuItem1_Click);
 			// 
 			// cmbEquiDT
 			// 
 			this->cmbEquiDT->FormattingEnabled = true;
-			this->cmbEquiDT->Location = System::Drawing::Point(100, 99);
-			this->cmbEquiDT->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->cmbEquiDT->Location = System::Drawing::Point(133, 122);
+			this->cmbEquiDT->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->cmbEquiDT->Name = L"cmbEquiDT";
-			this->cmbEquiDT->Size = System::Drawing::Size(145, 21);
+			this->cmbEquiDT->Size = System::Drawing::Size(192, 24);
 			this->cmbEquiDT->TabIndex = 41;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(17, 180);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label2->Location = System::Drawing::Point(23, 222);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(56, 13);
+			this->label2->Size = System::Drawing::Size(81, 16);
 			this->label2->TabIndex = 42;
 			this->label2->Text = L"Jugadores";
 			// 
 			// txrTeamNum
 			// 
-			this->txrTeamNum->Location = System::Drawing::Point(100, 180);
-			this->txrTeamNum->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->txrTeamNum->Location = System::Drawing::Point(133, 222);
+			this->txrTeamNum->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->txrTeamNum->Name = L"txrTeamNum";
-			this->txrTeamNum->Size = System::Drawing::Size(60, 20);
+			this->txrTeamNum->Size = System::Drawing::Size(79, 22);
 			this->txrTeamNum->TabIndex = 43;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(17, 103);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label3->Location = System::Drawing::Point(23, 127);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(68, 13);
+			this->label3->Size = System::Drawing::Size(97, 16);
 			this->label3->TabIndex = 44;
 			this->label3->Text = L"Nombre (DT)";
 			// 
 			// bttSearchTeam
 			// 
-			this->bttSearchTeam->Location = System::Drawing::Point(263, 123);
-			this->bttSearchTeam->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->bttSearchTeam->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->bttSearchTeam->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->bttSearchTeam->Location = System::Drawing::Point(351, 151);
+			this->bttSearchTeam->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->bttSearchTeam->Name = L"bttSearchTeam";
-			this->bttSearchTeam->Size = System::Drawing::Size(103, 19);
+			this->bttSearchTeam->Size = System::Drawing::Size(142, 36);
 			this->bttSearchTeam->TabIndex = 45;
 			this->bttSearchTeam->Text = L"BUSCAR";
-			this->bttSearchTeam->UseVisualStyleBackColor = true;
+			this->bttSearchTeam->UseVisualStyleBackColor = false;
 			this->bttSearchTeam->Click += gcnew System::EventHandler(this, &TeamsForm::bttSearchTeam_Click);
 			// 
 			// TeamsForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->ClientSize = System::Drawing::Size(685, 487);
+			this->ClientSize = System::Drawing::Size(913, 599);
 			this->Controls->Add(this->bttSearchTeam);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->txrTeamNum);
@@ -406,8 +429,9 @@ namespace FootballView {
 			this->Controls->Add(this->cbmTeamsTour);
 			this->Controls->Add(this->txtTeam);
 			this->Controls->Add(this->menuStrip1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
-			this->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"TeamsForm";
 			this->Text = L"Registro de Equipos";
 			this->Load += gcnew System::EventHandler(this, &TeamsForm::TeamsForm_Load);

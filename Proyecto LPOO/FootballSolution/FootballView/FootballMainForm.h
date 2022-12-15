@@ -97,6 +97,7 @@ namespace FootballView {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(FootballMainForm::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->menúToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->cerrarToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -137,8 +138,8 @@ namespace FootballView {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
-			this->menuStrip1->Size = System::Drawing::Size(892, 24);
+			this->menuStrip1->Padding = System::Windows::Forms::Padding(5, 2, 0, 2);
+			this->menuStrip1->Size = System::Drawing::Size(1189, 28);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -146,13 +147,14 @@ namespace FootballView {
 			// 
 			this->menúToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->cerrarToolStripMenuItem });
 			this->menúToolStripMenuItem->Name = L"menúToolStripMenuItem";
-			this->menúToolStripMenuItem->Size = System::Drawing::Size(50, 20);
+			this->menúToolStripMenuItem->Size = System::Drawing::Size(60, 24);
 			this->menúToolStripMenuItem->Text = L"Menú";
 			// 
 			// cerrarToolStripMenuItem
 			// 
+			this->cerrarToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"cerrarToolStripMenuItem.Image")));
 			this->cerrarToolStripMenuItem->Name = L"cerrarToolStripMenuItem";
-			this->cerrarToolStripMenuItem->Size = System::Drawing::Size(106, 22);
+			this->cerrarToolStripMenuItem->Size = System::Drawing::Size(224, 26);
 			this->cerrarToolStripMenuItem->Text = L"Cerrar";
 			this->cerrarToolStripMenuItem->Click += gcnew System::EventHandler(this, &FootballMainForm::cerrarToolStripMenuItem_Click);
 			// 
@@ -162,213 +164,237 @@ namespace FootballView {
 				this->registroToolStripMenuItem,
 					this->inscripcionesToolStripMenuItem, this->cTorneosToolStripMenuItem, this->resultadosPartidosToolStripMenuItem
 			});
+			this->crearEquipoToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"crearEquipoToolStripMenuItem.Image")));
 			this->crearEquipoToolStripMenuItem->Name = L"crearEquipoToolStripMenuItem";
-			this->crearEquipoToolStripMenuItem->Size = System::Drawing::Size(62, 20);
+			this->crearEquipoToolStripMenuItem->Size = System::Drawing::Size(98, 24);
 			this->crearEquipoToolStripMenuItem->Text = L"Registro";
 			// 
 			// registroToolStripMenuItem
 			// 
+			this->registroToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"registroToolStripMenuItem.Image")));
 			this->registroToolStripMenuItem->Name = L"registroToolStripMenuItem";
-			this->registroToolStripMenuItem->Size = System::Drawing::Size(178, 22);
+			this->registroToolStripMenuItem->Size = System::Drawing::Size(225, 26);
 			this->registroToolStripMenuItem->Text = L"Registro de Equipos";
 			this->registroToolStripMenuItem->Click += gcnew System::EventHandler(this, &FootballMainForm::registroToolStripMenuItem_Click);
 			// 
 			// inscripcionesToolStripMenuItem
 			// 
+			this->inscripcionesToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"inscripcionesToolStripMenuItem.Image")));
 			this->inscripcionesToolStripMenuItem->Name = L"inscripcionesToolStripMenuItem";
-			this->inscripcionesToolStripMenuItem->Size = System::Drawing::Size(178, 22);
+			this->inscripcionesToolStripMenuItem->Size = System::Drawing::Size(225, 26);
 			this->inscripcionesToolStripMenuItem->Text = L"Inscripciones";
 			this->inscripcionesToolStripMenuItem->Click += gcnew System::EventHandler(this, &FootballMainForm::inscripcionesToolStripMenuItem_Click);
 			// 
 			// cTorneosToolStripMenuItem
 			// 
+			this->cTorneosToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"cTorneosToolStripMenuItem.Image")));
 			this->cTorneosToolStripMenuItem->Name = L"cTorneosToolStripMenuItem";
-			this->cTorneosToolStripMenuItem->Size = System::Drawing::Size(178, 22);
+			this->cTorneosToolStripMenuItem->Size = System::Drawing::Size(225, 26);
 			this->cTorneosToolStripMenuItem->Text = L"Torneos";
 			this->cTorneosToolStripMenuItem->Click += gcnew System::EventHandler(this, &FootballMainForm::cTorneosToolStripMenuItem_Click);
 			// 
 			// resultadosPartidosToolStripMenuItem
 			// 
+			this->resultadosPartidosToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resultadosPartidosToolStripMenuItem.Image")));
 			this->resultadosPartidosToolStripMenuItem->Name = L"resultadosPartidosToolStripMenuItem";
-			this->resultadosPartidosToolStripMenuItem->Size = System::Drawing::Size(178, 22);
+			this->resultadosPartidosToolStripMenuItem->Size = System::Drawing::Size(225, 26);
 			this->resultadosPartidosToolStripMenuItem->Text = L"Resultados Partidos";
 			this->resultadosPartidosToolStripMenuItem->Click += gcnew System::EventHandler(this, &FootballMainForm::resultadosPartidosToolStripMenuItem_Click);
 			// 
 			// tablaDePosicionesToolStripMenuItem
 			// 
 			this->tablaDePosicionesToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->tablaPosicionesPorCampeonatoToolStripMenuItem });
+			this->tablaDePosicionesToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"tablaDePosicionesToolStripMenuItem.Image")));
 			this->tablaDePosicionesToolStripMenuItem->Name = L"tablaDePosicionesToolStripMenuItem";
-			this->tablaDePosicionesToolStripMenuItem->Size = System::Drawing::Size(121, 20);
+			this->tablaDePosicionesToolStripMenuItem->Size = System::Drawing::Size(171, 24);
 			this->tablaDePosicionesToolStripMenuItem->Text = L"Tabla de Posiciones";
 			// 
 			// tablaPosicionesPorCampeonatoToolStripMenuItem
 			// 
 			this->tablaPosicionesPorCampeonatoToolStripMenuItem->Name = L"tablaPosicionesPorCampeonatoToolStripMenuItem";
-			this->tablaPosicionesPorCampeonatoToolStripMenuItem->Size = System::Drawing::Size(251, 22);
+			this->tablaPosicionesPorCampeonatoToolStripMenuItem->Size = System::Drawing::Size(314, 26);
 			this->tablaPosicionesPorCampeonatoToolStripMenuItem->Text = L"Tabla Posiciones por campeonato";
 			this->tablaPosicionesPorCampeonatoToolStripMenuItem->Click += gcnew System::EventHandler(this, &FootballMainForm::tablaPosicionesPorCampeonatoToolStripMenuItem_Click);
 			// 
 			// estadisticasPorPartidoToolStripMenuItem
 			// 
 			this->estadisticasPorPartidoToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->resultadosToolStripMenuItem });
+			this->estadisticasPorPartidoToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"estadisticasPorPartidoToolStripMenuItem.Image")));
 			this->estadisticasPorPartidoToolStripMenuItem->Name = L"estadisticasPorPartidoToolStripMenuItem";
-			this->estadisticasPorPartidoToolStripMenuItem->Size = System::Drawing::Size(141, 20);
+			this->estadisticasPorPartidoToolStripMenuItem->Size = System::Drawing::Size(199, 24);
 			this->estadisticasPorPartidoToolStripMenuItem->Text = L"Estadisticas por partido";
 			// 
 			// resultadosToolStripMenuItem
 			// 
+			this->resultadosToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resultadosToolStripMenuItem.Image")));
 			this->resultadosToolStripMenuItem->Name = L"resultadosToolStripMenuItem";
-			this->resultadosToolStripMenuItem->Size = System::Drawing::Size(131, 22);
+			this->resultadosToolStripMenuItem->Size = System::Drawing::Size(224, 26);
 			this->resultadosToolStripMenuItem->Text = L"Resultados";
 			this->resultadosToolStripMenuItem->Click += gcnew System::EventHandler(this, &FootballMainForm::resultadosToolStripMenuItem_Click);
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(131, 26);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label1->Location = System::Drawing::Point(175, 32);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(93, 26);
+			this->label1->Size = System::Drawing::Size(128, 32);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Registro";
 			// 
 			// bttIniTeam
 			// 
-			this->bttIniTeam->Location = System::Drawing::Point(43, 73);
-			this->bttIniTeam->Margin = System::Windows::Forms::Padding(2);
+			this->bttIniTeam->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->bttIniTeam->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->bttIniTeam->Location = System::Drawing::Point(57, 90);
+			this->bttIniTeam->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->bttIniTeam->Name = L"bttIniTeam";
-			this->bttIniTeam->Size = System::Drawing::Size(124, 33);
+			this->bttIniTeam->Size = System::Drawing::Size(165, 41);
 			this->bttIniTeam->TabIndex = 1;
 			this->bttIniTeam->Text = L"Registro de Equipos";
-			this->bttIniTeam->UseVisualStyleBackColor = true;
+			this->bttIniTeam->UseVisualStyleBackColor = false;
 			this->bttIniTeam->Click += gcnew System::EventHandler(this, &FootballMainForm::bttIniTeam_Click);
 			// 
 			// bttIniInscrip
 			// 
-			this->bttIniInscrip->Location = System::Drawing::Point(42, 132);
-			this->bttIniInscrip->Margin = System::Windows::Forms::Padding(2);
+			this->bttIniInscrip->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->bttIniInscrip->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->bttIniInscrip->Location = System::Drawing::Point(56, 162);
+			this->bttIniInscrip->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->bttIniInscrip->Name = L"bttIniInscrip";
-			this->bttIniInscrip->Size = System::Drawing::Size(124, 33);
+			this->bttIniInscrip->Size = System::Drawing::Size(165, 41);
 			this->bttIniInscrip->TabIndex = 2;
 			this->bttIniInscrip->Text = L"Inscripciones";
-			this->bttIniInscrip->UseVisualStyleBackColor = true;
+			this->bttIniInscrip->UseVisualStyleBackColor = false;
 			this->bttIniInscrip->Click += gcnew System::EventHandler(this, &FootballMainForm::bttIniInscrip_Click);
 			// 
 			// bttIniTour
 			// 
-			this->bttIniTour->Location = System::Drawing::Point(194, 73);
-			this->bttIniTour->Margin = System::Windows::Forms::Padding(2);
+			this->bttIniTour->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->bttIniTour->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->bttIniTour->Location = System::Drawing::Point(259, 90);
+			this->bttIniTour->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->bttIniTour->Name = L"bttIniTour";
-			this->bttIniTour->Size = System::Drawing::Size(124, 33);
+			this->bttIniTour->Size = System::Drawing::Size(165, 41);
 			this->bttIniTour->TabIndex = 3;
 			this->bttIniTour->Text = L"Torneos";
-			this->bttIniTour->UseVisualStyleBackColor = true;
+			this->bttIniTour->UseVisualStyleBackColor = false;
 			this->bttIniTour->Click += gcnew System::EventHandler(this, &FootballMainForm::bttIniTour_Click);
 			// 
 			// panel1
 			// 
+			this->panel1->BackColor = System::Drawing::Color::DarkSeaGreen;
 			this->panel1->Controls->Add(this->button2);
 			this->panel1->Controls->Add(this->bttIniTour);
 			this->panel1->Controls->Add(this->bttIniInscrip);
 			this->panel1->Controls->Add(this->bttIniTeam);
 			this->panel1->Controls->Add(this->label1);
-			this->panel1->Location = System::Drawing::Point(29, 54);
-			this->panel1->Margin = System::Windows::Forms::Padding(2);
+			this->panel1->Location = System::Drawing::Point(39, 66);
+			this->panel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(369, 202);
+			this->panel1->Size = System::Drawing::Size(492, 249);
 			this->panel1->TabIndex = 3;
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(194, 132);
-			this->button2->Margin = System::Windows::Forms::Padding(2);
+			this->button2->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->button2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->button2->Location = System::Drawing::Point(259, 162);
+			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(124, 33);
+			this->button2->Size = System::Drawing::Size(165, 41);
 			this->button2->TabIndex = 4;
 			this->button2->Text = L"Resultados Partidos";
-			this->button2->UseVisualStyleBackColor = true;
+			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &FootballMainForm::button2_Click);
 			// 
 			// panel2
 			// 
+			this->panel2->BackColor = System::Drawing::Color::DarkSeaGreen;
 			this->panel2->Controls->Add(this->button3);
 			this->panel2->Controls->Add(this->label2);
-			this->panel2->Location = System::Drawing::Point(447, 54);
-			this->panel2->Margin = System::Windows::Forms::Padding(2);
+			this->panel2->Location = System::Drawing::Point(596, 66);
+			this->panel2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(369, 90);
+			this->panel2->Size = System::Drawing::Size(492, 111);
 			this->panel2->TabIndex = 4;
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(134, 39);
-			this->button3->Margin = System::Windows::Forms::Padding(2);
+			this->button3->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->button3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->button3->Location = System::Drawing::Point(179, 48);
+			this->button3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(124, 33);
+			this->button3->Size = System::Drawing::Size(165, 41);
 			this->button3->TabIndex = 1;
 			this->button3->Text = L"Ver Tabla";
-			this->button3->UseVisualStyleBackColor = true;
+			this->button3->UseVisualStyleBackColor = false;
 			this->button3->Click += gcnew System::EventHandler(this, &FootballMainForm::button3_Click);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(26, 11);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label2->Location = System::Drawing::Point(124, 14);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(204, 26);
+			this->label2->Size = System::Drawing::Size(287, 32);
 			this->label2->TabIndex = 0;
 			this->label2->Text = L"Tabla de posiciones";
 			// 
 			// panel3
 			// 
+			this->panel3->BackColor = System::Drawing::Color::DarkSeaGreen;
 			this->panel3->Controls->Add(this->button1);
 			this->panel3->Controls->Add(this->label3);
-			this->panel3->Location = System::Drawing::Point(447, 167);
-			this->panel3->Margin = System::Windows::Forms::Padding(2);
+			this->panel3->Location = System::Drawing::Point(596, 206);
+			this->panel3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(369, 89);
+			this->panel3->Size = System::Drawing::Size(492, 110);
 			this->panel3->TabIndex = 5;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(134, 39);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
+			this->button1->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->button1->Location = System::Drawing::Point(179, 48);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(124, 33);
+			this->button1->Size = System::Drawing::Size(165, 41);
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Ver Gráficos";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &FootballMainForm::button1_Click);
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(26, 11);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label3->Location = System::Drawing::Point(99, 14);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(241, 26);
+			this->label3->Size = System::Drawing::Size(337, 32);
 			this->label3->TabIndex = 0;
 			this->label3->Text = L"Estadísticas por Partido";
 			// 
 			// FootballMainForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(892, 521);
+			this->ClientSize = System::Drawing::Size(1189, 641);
 			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->menuStrip1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->IsMdiContainer = true;
 			this->MainMenuStrip = this->menuStrip1;
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"FootballMainForm";
 			this->Text = L"App de Campeonatos";
 			this->Load += gcnew System::EventHandler(this, &FootballMainForm::FootballMainForm_Load);

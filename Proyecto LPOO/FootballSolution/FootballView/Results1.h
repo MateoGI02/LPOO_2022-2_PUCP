@@ -260,17 +260,20 @@ namespace FootballView {
 			// cmbresultados
 			// 
 			this->cmbresultados->FormattingEnabled = true;
-			this->cmbresultados->Location = System::Drawing::Point(398, 143);
+			this->cmbresultados->Location = System::Drawing::Point(298, 116);
+			this->cmbresultados->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->cmbresultados->Name = L"cmbresultados";
-			this->cmbresultados->Size = System::Drawing::Size(237, 24);
+			this->cmbresultados->Size = System::Drawing::Size(179, 21);
 			this->cmbresultados->TabIndex = 27;
 			// 
 			// btnSearchResultados
 			// 
-			this->btnSearchResultados->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->btnSearchResultados->Location = System::Drawing::Point(667, 135);
+			this->btnSearchResultados->BackColor = System::Drawing::Color::DarkOliveGreen;
+			this->btnSearchResultados->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btnSearchResultados->Location = System::Drawing::Point(500, 110);
+			this->btnSearchResultados->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnSearchResultados->Name = L"btnSearchResultados";
-			this->btnSearchResultados->Size = System::Drawing::Size(107, 39);
+			this->btnSearchResultados->Size = System::Drawing::Size(80, 32);
 			this->btnSearchResultados->TabIndex = 26;
 			this->btnSearchResultados->Text = L"BUSCAR";
 			this->btnSearchResultados->UseVisualStyleBackColor = false;
@@ -282,7 +285,8 @@ namespace FootballView {
 			this->chart1->ChartAreas->Add(chartArea1);
 			legend1->Name = L"Legend1";
 			this->chart1->Legends->Add(legend1);
-			this->chart1->Location = System::Drawing::Point(23, 184);
+			this->chart1->Location = System::Drawing::Point(17, 150);
+			this->chart1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->chart1->Name = L"chart1";
 			this->chart1->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::Pastel;
 			series1->ChartArea = L"ChartArea1";
@@ -297,7 +301,7 @@ namespace FootballView {
 			this->chart1->Series->Add(series1);
 			this->chart1->Series->Add(series2);
 			this->chart1->Series->Add(series3);
-			this->chart1->Size = System::Drawing::Size(1221, 460);
+			this->chart1->Size = System::Drawing::Size(916, 374);
 			this->chart1->TabIndex = 25;
 			this->chart1->Text = L"chart1";
 			title1->Font = (gcnew System::Drawing::Font(L"Lucida Sans Unicode", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -314,27 +318,30 @@ namespace FootballView {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe UI Symbol", 28.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::DarkGreen;
-			this->label1->Location = System::Drawing::Point(11, 36);
+			this->label1->Location = System::Drawing::Point(8, 29);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(663, 62);
+			this->label1->Size = System::Drawing::Size(541, 51);
 			this->label1->TabIndex = 24;
 			this->label1->Text = L"GRAFICAS POR CAMPEONATO";
 			// 
 			// pictureBox2
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(586, 27);
+			this->pictureBox2->Location = System::Drawing::Point(440, 22);
+			this->pictureBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(683, 95);
+			this->pictureBox2->Size = System::Drawing::Size(512, 77);
 			this->pictureBox2->TabIndex = 23;
 			this->pictureBox2->TabStop = false;
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(-3, 27);
+			this->pictureBox1->Location = System::Drawing::Point(-2, 22);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(594, 95);
+			this->pictureBox1->Size = System::Drawing::Size(446, 77);
 			this->pictureBox1->TabIndex = 22;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -347,21 +354,24 @@ namespace FootballView {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1269, 28);
+			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
+			this->menuStrip1->Size = System::Drawing::Size(952, 28);
 			this->menuStrip1->TabIndex = 28;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// puntajesToolStripMenuItem
 			// 
+			this->puntajesToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"puntajesToolStripMenuItem.Image")));
 			this->puntajesToolStripMenuItem->Name = L"puntajesToolStripMenuItem";
-			this->puntajesToolStripMenuItem->Size = System::Drawing::Size(78, 24);
+			this->puntajesToolStripMenuItem->Size = System::Drawing::Size(84, 24);
 			this->puntajesToolStripMenuItem->Text = L"Puntajes";
 			this->puntajesToolStripMenuItem->Click += gcnew System::EventHandler(this, &Results1::puntajesToolStripMenuItem_Click);
 			// 
 			// golesYTarjetasToolStripMenuItem
 			// 
+			this->golesYTarjetasToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"golesYTarjetasToolStripMenuItem.Image")));
 			this->golesYTarjetasToolStripMenuItem->Name = L"golesYTarjetasToolStripMenuItem";
-			this->golesYTarjetasToolStripMenuItem->Size = System::Drawing::Size(125, 24);
+			this->golesYTarjetasToolStripMenuItem->Size = System::Drawing::Size(119, 24);
 			this->golesYTarjetasToolStripMenuItem->Text = L"Goles y Tarjetas";
 			this->golesYTarjetasToolStripMenuItem->Click += gcnew System::EventHandler(this, &Results1::golesYTarjetasToolStripMenuItem_Click);
 			// 
@@ -371,14 +381,15 @@ namespace FootballView {
 			this->chart2->ChartAreas->Add(chartArea2);
 			legend2->Name = L"Legend1";
 			this->chart2->Legends->Add(legend2);
-			this->chart2->Location = System::Drawing::Point(103, 180);
+			this->chart2->Location = System::Drawing::Point(77, 146);
+			this->chart2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->chart2->Name = L"chart2";
 			this->chart2->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::Bright;
 			series4->ChartArea = L"ChartArea1";
 			series4->Legend = L"Legend1";
 			series4->Name = L"Goles";
 			this->chart2->Series->Add(series4);
-			this->chart2->Size = System::Drawing::Size(445, 439);
+			this->chart2->Size = System::Drawing::Size(334, 357);
 			this->chart2->TabIndex = 29;
 			this->chart2->Text = L"chart2";
 			title2->BackColor = System::Drawing::Color::Transparent;
@@ -396,9 +407,10 @@ namespace FootballView {
 			this->chart3->ChartAreas->Add(chartArea3);
 			legend3->Name = L"Legend1";
 			this->chart3->Legends->Add(legend3);
-			this->chart3->Location = System::Drawing::Point(704, 180);
+			this->chart3->Location = System::Drawing::Point(528, 146);
+			this->chart3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->chart3->Name = L"chart3";
-			this->chart3->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::Bright;
+			this->chart3->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::Pastel;
 			series5->ChartArea = L"ChartArea1";
 			series5->Legend = L"Legend1";
 			series5->Name = L"Tarjetas Amarillas";
@@ -407,7 +419,7 @@ namespace FootballView {
 			series6->Name = L"Tarjetas Rojas";
 			this->chart3->Series->Add(series5);
 			this->chart3->Series->Add(series6);
-			this->chart3->Size = System::Drawing::Size(500, 435);
+			this->chart3->Size = System::Drawing::Size(375, 353);
 			this->chart3->TabIndex = 30;
 			this->chart3->Text = L"chart3";
 			title3->Font = (gcnew System::Drawing::Font(L"Lucida Sans Unicode", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -419,10 +431,10 @@ namespace FootballView {
 			// 
 			// Results1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::DarkSeaGreen;
-			this->ClientSize = System::Drawing::Size(1269, 656);
+			this->ClientSize = System::Drawing::Size(952, 533);
 			this->Controls->Add(this->chart3);
 			this->Controls->Add(this->chart2);
 			this->Controls->Add(this->cmbresultados);
@@ -433,6 +445,7 @@ namespace FootballView {
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"Results1";
 			this->Text = L"Grafica de Resultados";
 			this->Load += gcnew System::EventHandler(this, &Results1::Results1_Load);
@@ -587,7 +600,12 @@ private: System::Void cmbresultados_SelectedIndexChanged(System::Object^ sender,
 			for (int i = 0; i < matchList->Count; i++) {
 
 				for (int j = 0; j < footballteamsList->Count; j++) {
-					if (matchList[i]->TeamVisit->Id == footballteamsList[j]->Id) {
+					if (matchList[i]->GolTeamVisit=="??" || matchList[i]->YellowTeamVisit == "??" || matchList[i]->RedTeamVisit=="??" 
+						|| matchList[i]->GolTeamLocal == "??" || matchList[i]->YellowTeamLocal == "??" 
+						|| matchList[i]->RedTeamLocal == "??" ) {
+						//No se hace nada
+					}
+					else if (matchList[i]->TeamVisit->Id == footballteamsList[j]->Id) {
 
 						footballteamsList[j]->GoalsV = Int32::Parse(matchList[i]->GolTeamVisit);
 						footballteamsList[j]->TarjetasV =  Int32::Parse(matchList[i]->YellowTeamVisit);
